@@ -1,20 +1,63 @@
-Meu Portfólio em HTML e CSS
-Este repositório contém o desenvolvimento do meu portfólio pessoal, criado com HTML5 e CSS3, com o objetivo de reunir meus principais projetos, habilidades e experiências na área de tecnologia e design.
+# 💻 Portfólio — Amanda Andrade
 
-Objetivo
-Apresentar de forma clara, visual e responsiva quem sou eu como profissional, além de destacar meus trabalhos e projetos pessoais.
+Meu portfólio pessoal desenvolvido com HTML, CSS e JavaScript, criado para apresentar meus projetos, estudos e trajetória na área de Tecnologia.
 
-Tecnologias Utilizadas
-HTML5
-CSS3
+---
 
-Seções do Portfólio
-Sobre mim
-Projetos com links e descrições
-Habilidades técnicas
-Contato com formulário funcional ou redirecionamento
+## 🚀 Objetivo
 
-Acesse aqui:  [https://amanda-aandrade.github.io/PortfolioAmanda/](https://amanda-aandrade.github.io/PortfolioAmanda/)
+Este projeto foi desenvolvido com foco em:
 
-Status do Projeto
-Em desenvolvimento contínuo – sempre adicionando novos projetos e melhorias visuais.
+- prática de desenvolvimento web;
+- responsividade;
+- organização visual;
+- apresentação profissional;
+- evolução contínua como desenvolvedora Full Stack.
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Git & GitHub
+
+---
+
+## 🌌 Funcionalidades
+
+- Tema dark mode
+- Layout responsivo
+- Sessão de projetos
+- Sessão de habilidades
+- Navegação suave
+- Organização profissional das informações
+
+---
+
+## 📚 Projetos apresentados
+
+### 📖 Qzverso
+Projeto de plataforma de leitura inspirado em Wattpad e Netflix.
+
+### 🎓 Aprenda Fácil
+Projeto acadêmico com foco em acessibilidade e organização de conteúdo educacional.
+
+---
+
+## 🔗 Acesse o projeto
+
+🌐 Site:
+https://amanda-aandrade.github.io/PortfolioAmanda/
+
+📂 Repositório:
+https://github.com/Amanda-AAndrade/PortfolioAmanda
+
+---
+
+## 👩‍💻 Desenvolvido por
+
+Amanda Andrade  
+💜 Full Stack em formação  
+🤖 Explorando IA, Dados e Desenvolvimento Web
