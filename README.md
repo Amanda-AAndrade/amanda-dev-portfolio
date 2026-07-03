@@ -1,4 +1,4 @@
-# 💻 Portfólio — Amanda Andrade
+# 💻 Portfólio - Amanda Andrade
 
 Meu portfólio pessoal desenvolvido com HTML, CSS e JavaScript, criado para apresentar meus projetos, estudos e trajetória na área de Tecnologia.
 
@@ -18,21 +18,23 @@ Este projeto foi desenvolvido com foco em:
 
 ## 🛠️ Tecnologias utilizadas
 
-- HTML5
-- CSS3
-- JavaScript
-- Git & GitHub
-
+- HTML5;
+- CSS3;
+- JavaScript;
+- Git & GitHub;
+- Visual Studio Code;
+- Miro (planejar e organizar).
+  
 ---
 
 ## 🌌 Funcionalidades
 
-- Tema dark mode
-- Layout responsivo
-- Sessão de projetos
-- Sessão de habilidades
-- Navegação suave
-- Organização profissional das informações
+- Tema dark mode;
+- Layout responsivo;
+- Sessão de projetos;
+- Sessão de habilidades;
+- Navegação suave;
+- Organização profissional das informações.
 
 ---
 
@@ -60,4 +62,4 @@ https://github.com/Amanda-AAndrade/PortfolioAmanda
 
 Amanda Andrade  
 💜 Full Stack em formação  
-🤖 Explorando IA, Dados e Desenvolvimento Web
+🤖 Explorando Desenvolvimento Full Stack, Engenharia de Software; Arquitetura de Software e Infraestrutura e IA  aplicada a sistemas.
