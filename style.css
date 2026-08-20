@@ -20,6 +20,7 @@
   --radius: 22px;
 }
 
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -68,6 +69,7 @@ button {
   font: inherit;
 }
 
+
 /* =========================================================
    BACKGROUND GRID
 ========================================================= */
@@ -102,6 +104,7 @@ body::before {
   );
 }
 
+
 /* =========================================================
    STARFIELD
 ========================================================= */
@@ -121,6 +124,7 @@ body::before {
   opacity: 0.8;
 }
 
+
 /* =========================================================
    LAYERS
 ========================================================= */
@@ -133,6 +137,7 @@ main,
 
   z-index: 2;
 }
+
 
 /* =========================================================
    HEADER
@@ -176,12 +181,8 @@ main,
 
   font-size: 0.9rem;
 
-  border: 1px solid rgba(
-    78,
-    157,
-    255,
-    0.35
-  );
+  border: 1px solid
+    rgba(78, 157, 255, 0.35);
 
   padding: 4px 7px;
 
@@ -234,6 +235,7 @@ main,
   border-radius: 999px;
 }
 
+
 /* =========================================================
    GENERAL SECTIONS
 ========================================================= */
@@ -248,6 +250,7 @@ main,
 
   padding: 130px 0;
 }
+
 
 /* =========================================================
    HERO
@@ -412,28 +415,16 @@ h2 span {
 
   color: #d9dce5;
 
-  background: rgba(
-    255,
-    255,
-    255,
-    0.02
-  );
+  background:
+    rgba(255, 255, 255, 0.02);
 }
 
 .btn-ghost:hover {
-  border-color: rgba(
-    78,
-    157,
-    255,
-    0.45
-  );
+  border-color:
+    rgba(78, 157, 255, 0.45);
 
-  background: rgba(
-    78,
-    157,
-    255,
-    0.06
-  );
+  background:
+    rgba(78, 157, 255, 0.06);
 }
 
 .hero-meta {
@@ -470,6 +461,7 @@ h2 span {
 
   color: #858c9c;
 }
+
 
 /* =========================================================
    SPACE / ORBIT PANEL
@@ -758,6 +750,7 @@ h2 span {
   color: #5f687a;
 }
 
+
 /* =========================================================
    SCROLL HINT
 ========================================================= */
@@ -783,14 +776,21 @@ h2 span {
   margin-left: 8px;
 }
 
+
 /* =========================================================
    HEADINGS
 ========================================================= */
 
 .section-heading {
-  max-width: 760px;
+  max-width: 850px;
 
-  margin-bottom: 58px;
+  margin: 0 auto 58px;
+
+  text-align: center;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 18px;
 }
 
 .section-heading h2,
@@ -812,8 +812,9 @@ h2 span {
 
   max-width: 700px;
 
-  margin-top: 22px;
+  margin: 22px auto 0;
 }
+
 
 /* =========================================================
    GLASS CARDS
@@ -838,6 +839,7 @@ h2 span {
 
   backdrop-filter: blur(14px);
 }
+
 
 /* =========================================================
    ABOUT
@@ -935,6 +937,7 @@ h2 span {
   font-size: 0.75rem;
 }
 
+
 /* =========================================================
    PROJECTS
 ========================================================= */
@@ -1001,6 +1004,7 @@ h2 span {
   color: var(--cyan);
 }
 
+
 /* =========================================================
    PROJECT VISUALS
 ========================================================= */
@@ -1043,7 +1047,10 @@ h2 span {
   letter-spacing: -0.06em;
 }
 
-/* QZVERSO */
+
+/* =========================================================
+   QZVERSO
+========================================================= */
 
 .qz {
   background:
@@ -1111,7 +1118,10 @@ h2 span {
     infinite;
 }
 
-/* APRENDA FÁCIL */
+
+/* =========================================================
+   APRENDA FÁCIL
+========================================================= */
 
 .learn {
   background:
@@ -1141,7 +1151,10 @@ h2 span {
     infinite;
 }
 
-/* PORTFOLIO */
+
+/* =========================================================
+   PORTFOLIO VISUAL
+========================================================= */
 
 .portfolio-project {
   min-height: 190px;
@@ -1181,6 +1194,7 @@ h2 span {
 .terminal-window span:nth-child(3) {
   color: #ff8bc3;
 }
+
 
 /* =========================================================
    PROJECT CONTENT
@@ -1263,6 +1277,7 @@ h2 span {
 
   cursor: default;
 }
+
 
 /* =========================================================
    STACK
@@ -1483,40 +1498,56 @@ h2 span {
   white-space: nowrap;
 }
 
+
 /* =========================================================
    TIMELINE
+   CORREÇÃO PRINCIPAL
 ========================================================= */
 
 .timeline {
+  width: 100%;
+  max-width: 100%;
+
   border-left: 1px solid
     rgba(124, 184, 255, 0.18);
 
   margin-left: 12px;
+
+  padding-left: 0;
 }
 
 .timeline-item {
   position: relative;
 
+  width: 100%;
+  max-width: 100%;
+
   display: grid;
 
+  /*
+    Marcador + área de conteúdo.
+    minmax(0, 1fr) impede a coluna
+    de ficar artificialmente estreita.
+  */
   grid-template-columns:
-    75px
-    1fr;
+    56px
+    minmax(0, 1fr);
 
   gap: 28px;
 
   padding:
     0
     0
-    54px
+    58px
     28px;
+
+  min-width: 0;
 }
 
 .timeline-marker {
   position: absolute;
 
   left: -18px;
-
   top: 0;
 
   width: 36px;
@@ -1543,9 +1574,20 @@ h2 span {
   box-shadow:
     0 0 20px
     rgba(78, 157, 255, 0.08);
+
+  z-index: 2;
+}
+
+.timeline-content {
+  width: 100%;
+  max-width: 850px;
+
+  min-width: 0;
 }
 
 .timeline-date {
+  display: block;
+
   font:
     500 0.6rem
     "DM Mono",
@@ -1554,33 +1596,74 @@ h2 span {
   color: var(--pink);
 
   letter-spacing: 0.1em;
+
+  margin-bottom: 6px;
 }
 
 .timeline-content h3 {
-  font-size: 1.35rem;
+  width: 100%;
+
+  font-size: clamp(
+    1.35rem,
+    2.5vw,
+    2rem
+  );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.04em;
 
   margin-top: 4px;
+
+  color: var(--text);
+
+  overflow-wrap: normal;
+
+  word-break: normal;
 }
 
 .timeline-content h4 {
+  width: 100%;
+
   color: #8b93a4;
 
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+
+  line-height: 1.5;
 
   font-weight: 500;
 
-  margin-top: 2px;
+  margin-top: 7px;
+
+  overflow-wrap: normal;
+
+  word-break: normal;
 }
 
 .timeline-content p:not(.timeline-date) {
-  color: #777f90;
+  width: 100%;
 
-  font-size: 0.86rem;
+  color: #858d9e;
 
-  max-width: 720px;
+  font-size: 0.88rem;
 
-  margin-top: 12px;
+  line-height: 1.75;
+
+  max-width: 760px;
+
+  margin-top: 14px;
+
+  overflow-wrap: normal;
+
+  word-break: normal;
 }
+
+.timeline-content .tags {
+  width: 100%;
+
+  max-width: 760px;
+}
+
 
 /* =========================================================
    EDUCATION
@@ -1623,6 +1706,7 @@ h2 span {
 
   font-size: 0.75rem;
 }
+
 
 /* =========================================================
    CONTACT
@@ -1698,6 +1782,7 @@ h2 span {
   color: #d8dce4;
 }
 
+
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -1728,6 +1813,7 @@ h2 span {
 
   letter-spacing: 0.1em;
 }
+
 
 /* =========================================================
    BACK TO TOP
@@ -1784,6 +1870,7 @@ h2 span {
   pointer-events: auto;
 }
 
+
 /* =========================================================
    REVEAL
    IMPORTANTE:
@@ -1797,7 +1884,6 @@ h2 span {
   transform: none;
 }
 
-/* Quando o JS estiver realmente funcionando */
 .js-ready .reveal {
   opacity: 0;
 
@@ -1814,11 +1900,13 @@ h2 span {
   transform: none;
 }
 
+
 /* =========================================================
    ANIMAÇÕES
 ========================================================= */
 
 @keyframes scan {
+
   0%,
   100% {
     transform: translateY(-110px);
@@ -1836,7 +1924,9 @@ h2 span {
   }
 }
 
+
 @keyframes planetPulse {
+
   0%,
   100% {
     box-shadow:
@@ -1855,7 +1945,9 @@ h2 span {
   }
 }
 
+
 @keyframes orbitFloatA {
+
   0%,
   100% {
     transform:
@@ -1870,7 +1962,9 @@ h2 span {
   }
 }
 
+
 @keyframes orbitFloatB {
+
   0%,
   100% {
     transform:
@@ -1885,7 +1979,9 @@ h2 span {
   }
 }
 
+
 @keyframes orbitFloatC {
+
   0%,
   100% {
     transform:
@@ -1900,7 +1996,9 @@ h2 span {
   }
 }
 
+
 @keyframes gridMove {
+
   from {
     background-position:
       0 0,
@@ -1914,7 +2012,9 @@ h2 span {
   }
 }
 
+
 @keyframes iconFloat {
+
   0%,
   100% {
     transform:
@@ -1929,7 +2029,9 @@ h2 span {
   }
 }
 
+
 @keyframes stackRotate {
+
   from {
     transform:
       rotate(0deg);
@@ -1941,7 +2043,9 @@ h2 span {
   }
 }
 
+
 @keyframes stackRotateReverse {
+
   from {
     transform:
       rotate(30deg);
@@ -1953,11 +2057,13 @@ h2 span {
   }
 }
 
+
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
+
   .nav {
     display: none;
   }
@@ -1994,13 +2100,32 @@ h2 span {
   .contact-grid {
     gap: 45px;
   }
+
+  /*
+    Timeline continua ocupando toda a largura
+    disponível no tablet.
+  */
+
+  .timeline-item {
+    grid-template-columns:
+      48px
+      minmax(0, 1fr);
+
+    gap: 24px;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+  }
 }
+
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 620px) {
+
   .section,
   .site-header,
   .footer {
@@ -2077,11 +2202,53 @@ h2 span {
     gap: 10px;
   }
 
+
+  /* ================================================
+     TIMELINE MOBILE
+  ================================================ */
+
+  .timeline {
+    margin-left: 12px;
+  }
+
   .timeline-item {
+    width: 100%;
+
     grid-template-columns: 1fr;
 
+    gap: 10px;
+
     padding-left: 25px;
+
+    min-width: 0;
   }
+
+  .timeline-content {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.45rem;
+
+    line-height: 1.2;
+  }
+
+  .timeline-content h4 {
+    font-size: 0.82rem;
+
+    line-height: 1.5;
+  }
+
+  .timeline-content p:not(.timeline-date) {
+    max-width: 100%;
+
+    font-size: 0.84rem;
+
+    line-height: 1.7;
+  }
+
 
   .footer {
     flex-direction: column;
@@ -2101,13 +2268,16 @@ h2 span {
   .orbit-caption {
     font-size: 0.48rem;
   }
+
 }
+
 
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -2115,11 +2285,14 @@ h2 span {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration:
+      0.01ms !important;
 
-    animation-iteration-count: 1 !important;
+    animation-iteration-count:
+      1 !important;
 
-    transition-duration: 0.01ms !important;
+    transition-duration:
+      0.01ms !important;
   }
 
   .reveal,
@@ -2128,4 +2301,5 @@ h2 span {
 
     transform: none;
   }
+
 }
