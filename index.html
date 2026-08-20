@@ -1,389 +1,1442 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfólio de Amanda Andrade — desenvolvimento de software, projetos, Engenharia de Software e Inteligência Artificial." />
-  <meta name="theme-color" content="#07080d" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portfólio de Amanda Andrade — desenvolvimento de software, Engenharia de Software, projetos e Inteligência Artificial."
+  >
+
+  <meta
+    name="theme-color"
+    content="#07080d"
+  >
+
   <title>Amanda Andrade — Software & AI</title>
+
+  <!-- =====================================================
+       FONTES
+  ====================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
 <body>
-  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- =====================================================
+       CAMPO DE ESTRELAS
+       Controlado pelo JavaScript
+  ====================================================== -->
+
+  <canvas
+    id="starfield"
+    aria-hidden="true"
+  ></canvas>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Amanda Andrade — início">
-      <span class="brand-mark">&lt;/&gt;</span>
-      <span>AMANDA<span class="brand-dot">.</span></span>
+
+    <a
+      class="brand"
+      href="#inicio"
+      aria-label="Amanda Andrade — início"
+    >
+
+      <span class="brand-mark">
+        &lt;/&gt;
+      </span>
+
+      <span>
+        AMANDA<span class="brand-dot">.</span>
+      </span>
+
     </a>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#stack">Stack</a>
-      <a href="#trajetoria">Trajetória</a>
-      <a href="#contato">Contato</a>
+
+    <nav
+      class="nav"
+      aria-label="Navegação principal"
+    >
+
+      <a href="#sobre">
+        Sobre
+      </a>
+
+      <a href="#projetos">
+        Projetos
+      </a>
+
+      <a href="#stack">
+        Stack
+      </a>
+
+      <a href="#trajetoria">
+        Trajetória
+      </a>
+
+      <a href="#contato">
+        Contato
+      </a>
+
     </nav>
 
-    <a class="header-github" href="https://github.com/Amanda-AAndrade" target="_blank" rel="noopener noreferrer">
+
+    <a
+      class="header-github"
+      href="https://github.com/Amanda-AAndrade"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       GitHub ↗
     </a>
+
   </header>
 
+
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL
+  ====================================================== -->
+
   <main>
-    <section id="inicio" class="hero section">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section
+      id="inicio"
+      class="hero section"
+    >
+
       <div class="hero-grid">
+
+
+        <!-- TEXTO -->
+
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="status-dot"></span> SOFTWARE · AI · SYSTEM DESIGN</p>
-          <h1>Construindo sistemas.<br><span>Explorando ideias.</span></h1>
-          <p class="hero-text">
-            Sou Amanda Andrade, formada em Análise e Desenvolvimento de Sistemas e graduanda
-            em Engenharia de Software. Estou construindo minha trajetória em desenvolvimento,
-            projetos, arquitetura de software e Inteligência Artificial aplicada.
+
+          <p class="eyebrow">
+
+            <span class="status-dot"></span>
+
+            SOFTWARE · AI · SYSTEM DESIGN
+
           </p>
+
+
+          <h1>
+
+            Construindo sistemas.
+            <br>
+
+            <span>
+              Explorando ideias.
+            </span>
+
+          </h1>
+
+
+          <p class="hero-text">
+
+            Sou Amanda Andrade, formada em Análise e
+            Desenvolvimento de Sistemas e graduanda em
+            Engenharia de Software.
+
+            Estou construindo minha trajetória em
+            desenvolvimento, criação de projetos,
+            arquitetura de software e Inteligência
+            Artificial aplicada.
+
+          </p>
+
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projetos">Explorar projetos <span>↓</span></a>
-            <a class="btn btn-ghost" href="https://github.com/Amanda-AAndrade" target="_blank" rel="noopener noreferrer">Ver GitHub ↗</a>
+
+            <a
+              class="btn btn-primary"
+              href="#projetos"
+            >
+              Explorar projetos
+              <span>↓</span>
+            </a>
+
+
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/Amanda-AAndrade"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver GitHub ↗
+            </a>
+
           </div>
+
 
           <div class="hero-meta">
+
             <div>
-              <strong>01</strong>
-              <span>Desenvolvimento</span>
+
+              <strong>
+                01
+              </strong>
+
+              <span>
+                Desenvolvimento
+              </span>
+
             </div>
+
+
             <div>
-              <strong>02</strong>
-              <span>Arquitetura &amp; Engenharia</span>
+
+              <strong>
+                02
+              </strong>
+
+              <span>
+                Arquitetura &amp; Engenharia
+              </span>
+
             </div>
+
+
             <div>
-              <strong>03</strong>
-              <span>IA aplicada</span>
+
+              <strong>
+                03
+              </strong>
+
+              <span>
+                IA aplicada
+              </span>
+
             </div>
+
           </div>
+
         </div>
 
-        <div class="orbit-panel reveal" aria-label="Painel visual de exploração">
+
+        <!-- =================================================
+             PAINEL ESPACIAL
+        ================================================== -->
+
+        <div
+          class="orbit-panel reveal"
+          aria-label="Painel visual de exploração tecnológica"
+        >
+
           <div class="orbit orbit-a"></div>
+
           <div class="orbit orbit-b"></div>
+
           <div class="orbit orbit-c"></div>
+
+
           <div class="planet">
+
             <div class="planet-core"></div>
-            <span class="planet-label">BUILD<br>THEN<br>LEARN</span>
+
+            <span class="planet-label">
+
+              BUILD
+              <br>
+              THEN
+              <br>
+              LEARN
+
+            </span>
+
           </div>
-          <div class="orbit-node node-1">PY</div>
-          <div class="orbit-node node-2">API</div>
-          <div class="orbit-node node-3">DB</div>
-          <div class="orbit-node node-4">AI</div>
+
+
+          <div class="orbit-node node-1">
+            PY
+          </div>
+
+          <div class="orbit-node node-2">
+            API
+          </div>
+
+          <div class="orbit-node node-3">
+            DB
+          </div>
+
+          <div class="orbit-node node-4">
+            AI
+          </div>
+
+
           <div class="scanline"></div>
-          <p class="orbit-caption">EXPLORATION NODE / 2026</p>
+
+
+          <p class="orbit-caption">
+            EXPLORATION NODE / 2026
+          </p>
+
         </div>
+
       </div>
-      <div class="scroll-hint">SCROLL TO EXPLORE <span>↓</span></div>
+
+
+      <div class="scroll-hint">
+
+        SCROLL TO EXPLORE
+
+        <span>
+          ↓
+        </span>
+
+      </div>
+
     </section>
 
-    <section id="sobre" class="section">
+
+    <!-- ===================================================
+         SOBRE
+    ==================================================== -->
+
+    <section
+      id="sobre"
+      class="section"
+    >
+
       <div class="section-heading reveal">
-        <p class="eyebrow">01 / SOBRE</p>
-        <h2>Uma trajetória em<br><span>transição consciente.</span></h2>
+
+        <p class="eyebrow">
+          01 / SOBRE
+        </p>
+
+        <h2>
+
+          Uma trajetória em
+          <br>
+
+          <span>
+            transição consciente.
+          </span>
+
+        </h2>
+
       </div>
+
 
       <div class="about-grid">
-        <article class="glass-card about-main reveal">
-          <p class="card-kicker">PROFILE // AMANDA.A</p>
-          <p>
-            Minha experiência profissional começou nas áreas farmacêutica e hospitalar, onde
-            desenvolvi atenção aos detalhes, organização, responsabilidade, validação de
-            informações, gestão de processos e resolução de problemas.
+
+
+        <article
+          class="glass-card about-main reveal"
+        >
+
+          <p class="card-kicker">
+            PROFILE // AMANDA.A
           </p>
+
+
           <p>
-            Na Tecnologia, transformo essas competências em uma nova base profissional:
-            estudo Engenharia de Software, desenvolvo projetos na prática e exploro Python,
-            desenvolvimento web, bancos de dados, arquitetura e Inteligência Artificial.
+
+            Minha experiência profissional começou
+            nas áreas farmacêutica e hospitalar, onde
+            desenvolvi atenção aos detalhes,
+            organização, responsabilidade, validação
+            de informações, gestão de processos e
+            resolução de problemas.
+
           </p>
+
+
+          <p>
+
+            Na Tecnologia, transformo essas competências
+            em uma nova base profissional: estudo
+            Engenharia de Software, desenvolvo projetos
+            na prática e exploro Python, desenvolvimento
+            web, bancos de dados, arquitetura e
+            Inteligência Artificial.
+
+          </p>
+
+
           <p class="accent-line">
-            A ideia não é parecer pronta. É mostrar onde estou, o que já construí e para onde
-            estou evoluindo.
+
+            A ideia não é parecer pronta.
+            É mostrar onde estou, o que já construí
+            e para onde estou evoluindo.
+
           </p>
+
         </article>
+
 
         <div class="about-side">
+
+
           <article class="stat-card reveal">
-            <span class="stat-number">ADS</span>
-            <span class="stat-label">Superior Tecnólogo<br>concluído em 2026</span>
+
+            <span class="stat-number">
+              ADS
+            </span>
+
+            <span class="stat-label">
+
+              Superior Tecnólogo
+              <br>
+              concluído em 2026
+
+            </span>
+
           </article>
+
+
           <article class="stat-card reveal">
-            <span class="stat-number">ENG</span>
-            <span class="stat-label">Engenharia de Software<br>em andamento</span>
+
+            <span class="stat-number">
+              ENG
+            </span>
+
+            <span class="stat-label">
+
+              Engenharia de Software
+              <br>
+              em andamento
+
+            </span>
+
           </article>
+
+
           <article class="stat-card reveal">
-            <span class="stat-number">∞</span>
-            <span class="stat-label">Projetos, testes,<br>aprendizado contínuo</span>
+
+            <span class="stat-number">
+              ∞
+            </span>
+
+            <span class="stat-label">
+
+              Projetos, testes,
+              <br>
+              aprendizado contínuo
+
+            </span>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="projetos" class="section projects-section">
+
+    <!-- ===================================================
+         PROJETOS
+    ==================================================== -->
+
+    <section
+      id="projetos"
+      class="section projects-section"
+    >
+
       <div class="section-heading reveal">
-        <p class="eyebrow">02 / PROJETOS</p>
-        <h2>Onde a ideia vira<br><span>experimento.</span></h2>
-        <p class="section-lead">
-          Projetos reais da minha formação e estudos. Sem inflar stack ou inventar resultados:
-          cada projeto mostra o que foi desenvolvido e o que está em evolução.
+
+        <p class="eyebrow">
+          02 / PROJETOS
         </p>
+
+        <h2>
+
+          Onde a ideia vira
+          <br>
+
+          <span>
+            experimento.
+          </span>
+
+        </h2>
+
+        <p class="section-lead">
+
+          Projetos reais da minha formação e estudos.
+          Sem inflar stack ou inventar resultados:
+          cada projeto mostra o que foi desenvolvido
+          e o que está em evolução.
+
+        </p>
+
       </div>
+
 
       <div class="project-grid">
-        <article class="project-card project-featured reveal">
+
+
+        <!-- =================================================
+             QZVERSO
+        ================================================== -->
+
+        <article
+          class="project-card project-featured reveal"
+        >
+
           <div class="project-top">
-            <span class="project-index">P.01</span>
-            <span class="project-status">EM EVOLUÇÃO</span>
+
+            <span class="project-index">
+              P.01
+            </span>
+
+            <span class="project-status">
+              EM EVOLUÇÃO
+            </span>
+
           </div>
+
+
           <div class="project-visual qz">
+
             <div class="qz-lines"></div>
-            <span>QZVERSO</span>
+
+            <span>
+              QZVERSO
+            </span>
+
           </div>
+
+
           <div class="project-body">
-            <p class="project-type">ENGENHARIA DE SOFTWARE · FULL STACK · IA</p>
-            <h3>Qzverso</h3>
-            <p>
-              Plataforma de leitura digital para histórias seriadas, com lançamentos,
-              comentários, interação entre leitores e notificações — uma experiência inspirada
-              em serviços de streaming, aplicada ao universo de livros.
+
+            <p class="project-type">
+
+              ENGENHARIA DE SOFTWARE
+              · FULL STACK · IA
+
             </p>
+
+
+            <h3>
+              Qzverso
+            </h3>
+
+
+            <p>
+
+              Plataforma de leitura digital para
+              histórias seriadas, com lançamentos,
+              comentários, interação entre leitores
+              e notificações — uma experiência
+              inspirada em serviços de streaming,
+              aplicada ao universo de livros.
+
+            </p>
+
+
             <div class="tags">
-              <span>HTML</span><span>CSS</span><span>JS</span><span>FastAPI</span>
-              <span>PostgreSQL</span><span>Redis</span><span>Python / IA</span>
+
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+              <span>FastAPI</span>
+              <span>PostgreSQL</span>
+              <span>Redis</span>
+              <span>Python / IA</span>
+
             </div>
-            <span class="project-link muted">GitHub em produção</span>
+
+
+            <span class="project-link muted">
+
+              GitHub em produção
+
+            </span>
+
           </div>
+
         </article>
 
-        <article class="project-card reveal">
+
+        <!-- =================================================
+             APRENDA FÁCIL
+        ================================================== -->
+
+        <article
+          class="project-card reveal"
+        >
+
           <div class="project-top">
-            <span class="project-index">P.02</span>
-            <span class="project-status">PUBLICADO</span>
+
+            <span class="project-index">
+              P.02
+            </span>
+
+            <span class="project-status">
+              PUBLICADO
+            </span>
+
           </div>
+
+
           <div class="project-visual learn">
-            <div class="grid-icon">✦</div>
-            <span>APRENDA<br>FÁCIL</span>
-          </div>
-          <div class="project-body">
-            <p class="project-type">PROJETO DE EXTENSÃO · FRONT-END</p>
-            <h3>Aprenda Fácil</h3>
-            <p>
-              Projeto de extensão desenvolvido durante ADS com foco em educação acessível,
-              planejamento no Miro e implementação front-end.
-            </p>
-            <div class="tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Miro</span>
+
+            <div class="grid-icon">
+              ✦
             </div>
-            <a class="project-link" href="https://amanda-aandrade.github.io/aprenda-facil-pex/" target="_blank" rel="noopener noreferrer">Abrir projeto ↗</a>
+
+            <span>
+
+              APRENDA
+              <br>
+              FÁCIL
+
+            </span>
+
           </div>
+
+
+          <div class="project-body">
+
+            <p class="project-type">
+
+              PROJETO DE EXTENSÃO
+              · FRONT-END
+
+            </p>
+
+
+            <h3>
+              Aprenda Fácil
+            </h3>
+
+
+            <p>
+
+              Projeto de extensão desenvolvido durante
+              ADS com foco em educação acessível,
+              planejamento no Miro e implementação
+              front-end.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Miro</span>
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://amanda-aandrade.github.io/aprenda-facil-pex/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Abrir projeto ↗
+
+            </a>
+
+          </div>
+
         </article>
 
-        <article class="project-card reveal">
+
+        <!-- =================================================
+             PORTFÓLIO
+        ================================================== -->
+
+        <article
+          class="project-card reveal"
+        >
+
           <div class="project-top">
-            <span class="project-index">P.03</span>
-            <span class="project-status">EM EVOLUÇÃO</span>
+
+            <span class="project-index">
+              P.03
+            </span>
+
+            <span class="project-status">
+              EM EVOLUÇÃO
+            </span>
+
           </div>
+
+
           <div class="project-visual portfolio-project">
+
             <div class="terminal-window">
-              <span>&gt; portfolio.init()</span>
-              <span>&gt; stack.load("web")</span>
-              <span>&gt; future.add("python")</span>
-              <span>&gt; ai.explore()</span>
+
+              <span>
+                &gt; portfolio.init()
+              </span>
+
+              <span>
+                &gt; stack.load("web")
+              </span>
+
+              <span>
+                &gt; future.add("python")
+              </span>
+
+              <span>
+                &gt; ai.explore()
+              </span>
+
             </div>
+
           </div>
+
+
           <div class="project-body">
-            <p class="project-type">PROJETO PESSOAL · PORTFÓLIO</p>
-            <h3>Portfolio Amanda</h3>
-            <p>
-              Portfólio pessoal em evolução. A proposta é documentar projetos, estudos e
-              experimentos enquanto a base técnica cresce.
+
+            <p class="project-type">
+
+              PROJETO PESSOAL
+              · PORTFÓLIO
+
             </p>
+
+
+            <h3>
+              Portfolio Amanda
+            </h3>
+
+
+            <p>
+
+              Portfólio pessoal em evolução.
+              A proposta é documentar projetos,
+              estudos e experimentos enquanto
+              a base técnica cresce.
+
+            </p>
+
+
             <div class="tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python — futuro</span><span>IA — futuro</span>
+
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Python — futuro</span>
+              <span>IA — futuro</span>
+
             </div>
-            <a class="project-link" href="https://amanda-aandrade.github.io/PortfolioAmanda/" target="_blank" rel="noopener noreferrer">Versão publicada ↗</a>
+
+
+            <a
+              class="project-link"
+              href="https://amanda-aandrade.github.io/PortfolioAmanda/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Versão publicada ↗
+
+            </a>
+
           </div>
+
         </article>
+
       </div>
+
     </section>
 
-    <section id="stack" class="section stack-section">
+
+    <!-- ===================================================
+         STACK
+    ==================================================== -->
+
+    <section
+      id="stack"
+      class="section stack-section"
+    >
+
       <div class="section-heading reveal">
-        <p class="eyebrow">03 / STACK &amp; ESTUDOS</p>
-        <h2>O que estou<br><span>aprendendo a dominar.</span></h2>
+
+        <p class="eyebrow">
+          03 / STACK &amp; ESTUDOS
+        </p>
+
+        <h2>
+
+          O que estou
+          <br>
+
+          <span>
+            aprendendo a dominar.
+          </span>
+
+        </h2>
+
       </div>
+
 
       <div class="stack-layout">
+
+
+        <!-- VISUAL -->
+
         <div class="stack-orbit reveal">
+
           <div class="stack-ring ring-1"></div>
+
           <div class="stack-ring ring-2"></div>
+
           <div class="stack-ring ring-3"></div>
-          <div class="stack-center">STACK<br><small>EM CONSTRUÇÃO</small></div>
-          <span class="stack-chip chip-a">PYTHON</span>
-          <span class="stack-chip chip-b">JS</span>
-          <span class="stack-chip chip-c">SQL</span>
-          <span class="stack-chip chip-d">API</span>
+
+
+          <div class="stack-center">
+
+            STACK
+
+            <br>
+
+            <small>
+              EM CONSTRUÇÃO
+            </small>
+
+          </div>
+
+
+          <span class="stack-chip chip-a">
+            PYTHON
+          </span>
+
+          <span class="stack-chip chip-b">
+            JS
+          </span>
+
+          <span class="stack-chip chip-c">
+            SQL
+          </span>
+
+          <span class="stack-chip chip-d">
+            API
+          </span>
+
         </div>
+
+
+        <!-- LISTA -->
 
         <div class="stack-list reveal">
+
+
           <div class="stack-row">
-            <div><strong>Web</strong><span>HTML · CSS · JavaScript</span></div>
-            <small>BÁSICO / INTERMEDIÁRIO</small>
+
+            <div>
+
+              <strong>
+                Web
+              </strong>
+
+              <span>
+                HTML · CSS · JavaScript
+              </span>
+
+            </div>
+
+            <small>
+              BÁSICO / INTERMEDIÁRIO
+            </small>
+
           </div>
+
+
           <div class="stack-row">
-            <div><strong>Python</strong><span>Python · SQLite · fundamentos de IA</span></div>
-            <small>INICIANTE</small>
+
+            <div>
+
+              <strong>
+                Python
+              </strong>
+
+              <span>
+                Python · SQLite · fundamentos de IA
+              </span>
+
+            </div>
+
+            <small>
+              INICIANTE
+            </small>
+
           </div>
+
+
           <div class="stack-row">
-            <div><strong>Dados</strong><span>PostgreSQL · Power BI · Google Sheets</span></div>
-            <small>INICIANTE / INTERMEDIÁRIO</small>
+
+            <div>
+
+              <strong>
+                Dados
+              </strong>
+
+              <span>
+                PostgreSQL · Power BI · Google Sheets
+              </span>
+
+            </div>
+
+            <small>
+              INICIANTE / INTERMEDIÁRIO
+            </small>
+
           </div>
+
+
           <div class="stack-row">
-            <div><strong>Engenharia</strong><span>Git · GitHub · VS Code · lógica</span></div>
-            <small>BÁSICO / INTERMEDIÁRIO</small>
+
+            <div>
+
+              <strong>
+                Engenharia
+              </strong>
+
+              <span>
+                Git · GitHub · VS Code · lógica
+              </span>
+
+            </div>
+
+            <small>
+              BÁSICO / INTERMEDIÁRIO
+            </small>
+
           </div>
+
+
           <div class="stack-row">
-            <div><strong>IA</strong><span>Engenharia de Prompt · IA aplicada à produtividade</span></div>
-            <small>NOÇÕES BÁSICAS</small>
+
+            <div>
+
+              <strong>
+                IA
+              </strong>
+
+              <span>
+                Engenharia de Prompt · IA aplicada à produtividade
+              </span>
+
+            </div>
+
+            <small>
+              NOÇÕES BÁSICAS
+            </small>
+
           </div>
+
+
           <div class="stack-row">
-            <div><strong>Geo</strong><span>QGIS · GeoServer · Urbis</span></div>
-            <small>CONTEXTO PROFISSIONAL</small>
+
+            <div>
+
+              <strong>
+                Geo
+              </strong>
+
+              <span>
+                QGIS · GeoServer · Urbis
+              </span>
+
+            </div>
+
+            <small>
+              CONTEXTO PROFISSIONAL
+            </small>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="trajetoria" class="section timeline-section">
+
+    <!-- ===================================================
+         TRAJETÓRIA
+    ==================================================== -->
+
+    <section
+      id="trajetoria"
+      class="section timeline-section"
+    >
+
       <div class="section-heading reveal">
-        <p class="eyebrow">04 / TRAJETÓRIA</p>
-        <h2>Experiência que<br><span>migra com você.</span></h2>
+
+        <p class="eyebrow">
+          04 / TRAJETÓRIA
+        </p>
+
+        <h2>
+
+          Experiência que
+          <br>
+
+          <span>
+            migra com você.
+          </span>
+
+        </h2>
+
       </div>
+
 
       <div class="timeline">
-        <article class="timeline-item reveal">
-          <div class="timeline-marker">01</div>
-          <div class="timeline-content">
-            <p class="timeline-date">ABR/2026 — ABR/2027</p>
-            <h3>Estágio em Engenharia de Software</h3>
-            <h4>Secretaria Municipal de Cultura e Economia Criativa — DPP</h4>
-            <p>
-              Organização e padronização de informações, estruturação de dados para futura
-              migração e integração com georreferenciamento, além de apoio na gestão de
-              informações técnicas.
-            </p>
-            <div class="tags"><span>QGIS</span><span>PostgreSQL</span><span>GeoServer</span><span>Google Drive</span></div>
+
+
+        <!-- EXPERIÊNCIA 01 -->
+
+        <article
+          class="timeline-item reveal"
+        >
+
+          <div class="timeline-marker">
+            01
           </div>
+
+
+          <div class="timeline-content">
+
+            <p class="timeline-date">
+              ABR/2026 — ABR/2027
+            </p>
+
+            <h3>
+              Estágio em Engenharia de Software
+            </h3>
+
+            <h4>
+              Secretaria Municipal de Cultura
+              e Economia Criativa — DPP
+            </h4>
+
+            <p>
+
+              Organização e padronização de informações,
+              estruturação de dados para futura migração
+              e integração com georreferenciamento,
+              além de apoio na gestão de informações
+              técnicas.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span>QGIS</span>
+              <span>PostgreSQL</span>
+              <span>GeoServer</span>
+              <span>Google Drive</span>
+
+            </div>
+
+          </div>
+
         </article>
 
-        <article class="timeline-item reveal">
-          <div class="timeline-marker">02</div>
-          <div class="timeline-content">
-            <p class="timeline-date">FEV/2025 — JUN/2025</p>
-            <h3>Assistente de Operações</h3>
-            <h4>KPMG · Temporário</h4>
-            <p>Formatação e padronização de documentos e entregas utilizando KPDS Express, Adobe, Word e Excel.</p>
+
+        <!-- EXPERIÊNCIA 02 -->
+
+        <article
+          class="timeline-item reveal"
+        >
+
+          <div class="timeline-marker">
+            02
           </div>
+
+
+          <div class="timeline-content">
+
+            <p class="timeline-date">
+              FEV/2025 — JUN/2025
+            </p>
+
+            <h3>
+              Assistente de Operações
+            </h3>
+
+            <h4>
+              KPMG · Temporário
+            </h4>
+
+            <p>
+
+              Formatação e padronização de documentos
+              e entregas utilizando KPDS Express,
+              Adobe, Word e Excel.
+
+            </p>
+
+          </div>
+
         </article>
 
-        <article class="timeline-item reveal">
-          <div class="timeline-marker">03</div>
-          <div class="timeline-content">
-            <p class="timeline-date">NOV/2022 — MAI/2024</p>
-            <h3>Analista de Atendimento ao Cliente Pleno</h3>
-            <h4>Clínica Nas Nuvens — Bionexo · Home Office</h4>
-            <p>
-              Suporte técnico remoto, resolução de problemas em sistemas, gestão e priorização
-              de tickets e sugestão de melhorias para fluxos internos.
-            </p>
-            <div class="tags"><span>Intercom</span><span>Redmine</span><span>Slack</span><span>Miro</span><span>AnyDesk</span></div>
+
+        <!-- EXPERIÊNCIA 03 -->
+
+        <article
+          class="timeline-item reveal"
+        >
+
+          <div class="timeline-marker">
+            03
           </div>
+
+
+          <div class="timeline-content">
+
+            <p class="timeline-date">
+              NOV/2022 — MAI/2024
+            </p>
+
+            <h3>
+              Analista de Atendimento ao Cliente Pleno
+            </h3>
+
+            <h4>
+              Clínica Nas Nuvens — Bionexo · Home Office
+            </h4>
+
+            <p>
+
+              Suporte técnico remoto, resolução de
+              problemas em sistemas, gestão e priorização
+              de tickets e sugestão de melhorias para
+              fluxos internos.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span>Intercom</span>
+              <span>Redmine</span>
+              <span>Slack</span>
+              <span>Miro</span>
+              <span>AnyDesk</span>
+
+            </div>
+
+          </div>
+
         </article>
 
-        <article class="timeline-item reveal">
-          <div class="timeline-marker">04</div>
-          <div class="timeline-content">
-            <p class="timeline-date">MAR/2021 — MAR/2022</p>
-            <h3>Assistente de Farmácia Hospitalar</h3>
-            <h4>Hospital São Camilo Pompéia</h4>
-            <p>
-              Ambiente de alta responsabilidade, com controle de estoque, conciliação físico–
-              sistema, atendimento a intercorrências e processos orientados a SLA.
-            </p>
+
+        <!-- EXPERIÊNCIA 04 -->
+
+        <article
+          class="timeline-item reveal"
+        >
+
+          <div class="timeline-marker">
+            04
           </div>
+
+
+          <div class="timeline-content">
+
+            <p class="timeline-date">
+              MAR/2021 — MAR/2022
+            </p>
+
+            <h3>
+              Assistente de Farmácia Hospitalar
+            </h3>
+
+            <h4>
+              Hospital São Camilo Pompéia
+            </h4>
+
+            <p>
+
+              Ambiente de alta responsabilidade,
+              com controle de estoque, conciliação
+              físico–sistema, atendimento a
+              intercorrências e processos orientados
+              a SLA.
+
+            </p>
+
+          </div>
+
         </article>
+
       </div>
+
     </section>
 
-    <section class="section education-section">
+
+    <!-- ===================================================
+         FORMAÇÃO
+    ==================================================== -->
+
+    <section
+      class="section education-section"
+    >
+
       <div class="education-card reveal">
+
+
         <div>
-          <p class="eyebrow">FORMAÇÃO</p>
-          <h2>Fundação técnica<br><span>em expansão.</span></h2>
+
+          <p class="eyebrow">
+            FORMAÇÃO
+          </p>
+
+          <h2>
+
+            Fundação técnica
+            <br>
+
+            <span>
+              em expansão.
+            </span>
+
+          </h2>
+
         </div>
+
+
         <div class="education-list">
+
+
           <div>
-            <strong>Engenharia de Software</strong>
-            <span>Centro Universitário União das Américas Descomplica · 02/2026 — previsão 07/2028</span>
+
+            <strong>
+              Engenharia de Software
+            </strong>
+
+            <span>
+
+              Centro Universitário União das Américas
+              Descomplica · 02/2026 — previsão 07/2028
+
+            </span>
+
           </div>
+
+
           <div>
-            <strong>Análise e Desenvolvimento de Sistemas</strong>
-            <span>Centro Universitário União das Américas Descomplica · concluído em 07/2026</span>
+
+            <strong>
+              Análise e Desenvolvimento de Sistemas
+            </strong>
+
+            <span>
+
+              Centro Universitário União das Américas
+              Descomplica · concluído em 07/2026
+
+            </span>
+
           </div>
+
+
           <div>
-            <strong>Administração — Gestão Empresarial</strong>
-            <span>ETEC Prof. Aprígio Gonzaga · concluído em 06/2014</span>
+
+            <strong>
+              Administração — Gestão Empresarial
+            </strong>
+
+            <span>
+
+              ETEC Prof. Aprígio Gonzaga ·
+              concluído em 06/2014
+
+            </span>
+
           </div>
+
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="contato" class="section contact-section">
+
+    <!-- ===================================================
+         CONTATO
+    ==================================================== -->
+
+    <section
+      id="contato"
+      class="section contact-section"
+    >
+
       <div class="contact-grid reveal">
+
+
         <div>
-          <p class="eyebrow">05 / CONTATO</p>
-          <h2>Vamos construir<br><span>o próximo projeto?</span></h2>
-          <p class="contact-text">
-            Estou aberta a oportunidades de estágio, posições júnior/assistente, projetos
-            freelance e experiências que me permitam evoluir em desenvolvimento de software,
-            Engenharia e IA aplicada.
+
+          <p class="eyebrow">
+            05 / CONTATO
           </p>
+
+          <h2>
+
+            Vamos construir
+            <br>
+
+            <span>
+              o próximo projeto?
+            </span>
+
+          </h2>
+
+
+          <p class="contact-text">
+
+            Estou aberta a oportunidades de estágio,
+            posições júnior/assistente, projetos
+            freelance e experiências que me permitam
+            evoluir em desenvolvimento de software,
+            Engenharia e IA aplicada.
+
+          </p>
+
         </div>
+
 
         <div class="contact-links">
-          <a href="mailto:amanda.andradetec@gmail.com">
-            <span>E-MAIL</span>
-            <strong>amanda.andradetec@gmail.com ↗</strong>
+
+
+          <a
+            href="mailto:amanda.andradetec@gmail.com"
+          >
+
+            <span>
+              E-MAIL
+            </span>
+
+            <strong>
+              amanda.andradetec@gmail.com ↗
+            </strong>
+
           </a>
-          <a href="https://linkedin.com/in/amanda-andradetec" target="_blank" rel="noopener noreferrer">
-            <span>LINKEDIN</span>
-            <strong>/in/amanda-andradetec ↗</strong>
+
+
+          <a
+            href="https://linkedin.com/in/amanda-andradetec"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span>
+              LINKEDIN
+            </span>
+
+            <strong>
+              /in/amanda-andradetec ↗
+            </strong>
+
           </a>
-          <a href="https://github.com/Amanda-AAndrade" target="_blank" rel="noopener noreferrer">
-            <span>GITHUB</span>
-            <strong>@Amanda-AAndrade ↗</strong>
+
+
+          <a
+            href="https://github.com/Amanda-AAndrade"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span>
+              GITHUB
+            </span>
+
+            <strong>
+              @Amanda-AAndrade ↗
+            </strong>
+
           </a>
+
+
         </div>
+
       </div>
+
     </section>
+
   </main>
-  
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer class="footer">
-    <span>AMANDA.A / SOFTWARE &amp; AI</span>
-    <span>BUILD · LEARN · EXPLORE</span>
-    <span>© <span id="year"></span></span>
+
+    <span>
+      AMANDA.A / SOFTWARE &amp; AI
+    </span>
+
+    <span>
+      BUILD · LEARN · EXPLORE
+    </span>
+
+    <span>
+      © <span id="year"></span>
+    </span>
+
   </footer>
 
-  <button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
+
+  <!-- =====================================================
+       BOTÃO VOLTAR AO TOPO
+  ====================================================== -->
+
+  <button
+    class="back-top"
+    id="backTop"
+    type="button"
+    aria-label="Voltar ao topo"
+  >
+    ↑
+  </button>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
   <script src="script.js"></script>
+
 </body>
+
 </html>
