@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -11,7 +12,7 @@
 
   <meta
     name="description"
-    content="Portfólio de Amanda Andrade — desenvolvimento de software, Engenharia de Software, projetos e Engenharia de Prompt IA."
+    content="Portfólio de Amanda Andrade — desenvolvimento de software, Engenharia de Software, projetos, arquitetura e Engenharia de Prompt IA."
   >
 
   <meta
@@ -19,13 +20,19 @@
     content="#07080d"
   >
 
-  <title>Amanda Andrade — Software & Engenharia de Prompt - IA</title>
+  <title>
+    Amanda Andrade — Software & Engenharia de Prompt IA
+  </title>
+
 
   <!-- =====================================================
        FONTES
   ====================================================== -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
   <link
     rel="preconnect"
@@ -38,6 +45,7 @@
     rel="stylesheet"
   >
 
+
   <!-- =====================================================
        CSS
   ====================================================== -->
@@ -46,13 +54,15 @@
     rel="stylesheet"
     href="style.css"
   >
+
 </head>
+
 
 <body>
 
+
   <!-- =====================================================
        CAMPO DE ESTRELAS
-       Controlado pelo JavaScript
   ====================================================== -->
 
   <canvas
@@ -73,7 +83,10 @@
       aria-label="Amanda Andrade — início"
     >
 
-      <span class="brand-mark">
+      <span
+        class="brand-mark"
+        aria-hidden="true"
+      >
         &lt;/&gt;
       </span>
 
@@ -117,6 +130,7 @@
       href="https://github.com/Amanda-AAndrade"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Abrir GitHub de Amanda Andrade"
     >
       GitHub ↗
     </a>
@@ -124,8 +138,9 @@
   </header>
 
 
+
   <!-- =====================================================
-       CONTEÚDO PRINCIPAL
+       CONTEÚDO
   ====================================================== -->
 
   <main>
@@ -138,25 +153,31 @@
     <section
       id="inicio"
       class="hero section"
+      aria-labelledby="hero-title"
     >
 
       <div class="hero-grid">
 
 
-        <!-- TEXTO -->
+        <!-- -------------------------------------------------
+             TEXTO PRINCIPAL
+        -------------------------------------------------- -->
 
         <div class="hero-copy reveal">
 
           <p class="eyebrow">
 
-            <span class="status-dot"></span>
+            <span
+              class="status-dot"
+              aria-hidden="true"
+            ></span>
 
             SOFTWARE · AI · SYSTEM DESIGN
 
           </p>
 
 
-          <h1>
+          <h1 id="hero-title">
 
             Construindo sistemas.
             <br>
@@ -176,7 +197,8 @@
 
             Estou construindo minha trajetória em
             desenvolvimento, criação de projetos,
-            arquitetura de software e Engenharia de Prompt IA.
+            arquitetura de software e Engenharia de
+            Prompt IA.
 
           </p>
 
@@ -187,8 +209,13 @@
               class="btn btn-primary"
               href="#projetos"
             >
+
               Explorar projetos
-              <span>↓</span>
+
+              <span aria-hidden="true">
+                ↓
+              </span>
+
             </a>
 
 
@@ -198,7 +225,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
+
               Ver GitHub ↗
+
             </a>
 
           </div>
@@ -249,25 +278,45 @@
         </div>
 
 
-        <!-- =================================================
+
+        <!-- -------------------------------------------------
              PAINEL ESPACIAL
-        ================================================== -->
+        -------------------------------------------------- -->
 
         <div
           class="orbit-panel reveal"
           aria-label="Painel visual de exploração tecnológica"
         >
 
-          <div class="orbit orbit-a"></div>
+          <div
+            class="orbit orbit-a"
+            aria-hidden="true"
+          ></div>
 
-          <div class="orbit orbit-b"></div>
+          <div
+            class="orbit orbit-b"
+            aria-hidden="true"
+          ></div>
 
-          <div class="orbit orbit-c"></div>
+          <div
+            class="orbit orbit-c"
+            aria-hidden="true"
+          ></div>
 
 
-          <div class="planet">
+          <!-- PLANETA -->
 
-            <div class="planet-core"></div>
+          <div
+            class="planet"
+            role="img"
+            aria-label="Núcleo tecnológico interativo"
+          >
+
+            <div
+              class="planet-core"
+              aria-hidden="true"
+            ></div>
+
 
             <span class="planet-label">
 
@@ -282,24 +331,44 @@
           </div>
 
 
-          <div class="orbit-node node-1">
-            PY
+          <!-- NÓS TECNOLÓGICOS -->
+
+          <div
+            class="orbit-node node-1"
+            aria-hidden="true"
+          >
+            PROMPT
           </div>
 
-          <div class="orbit-node node-2">
+
+          <div
+            class="orbit-node node-2"
+            aria-hidden="true"
+          >
             API
           </div>
 
-          <div class="orbit-node node-3">
+
+          <div
+            class="orbit-node node-3"
+            aria-hidden="true"
+          >
             DB
           </div>
 
-          <div class="orbit-node node-4">
+
+          <div
+            class="orbit-node node-4"
+            aria-hidden="true"
+          >
             AI
           </div>
 
 
-          <div class="scanline"></div>
+          <div
+            class="scanline"
+            aria-hidden="true"
+          ></div>
 
 
           <p class="orbit-caption">
@@ -315,13 +384,14 @@
 
         SCROLL TO EXPLORE
 
-        <span>
+        <span aria-hidden="true">
           ↓
         </span>
 
       </div>
 
     </section>
+
 
 
     <!-- ===================================================
@@ -331,6 +401,7 @@
     <section
       id="sobre"
       class="section"
+      aria-labelledby="sobre-title"
     >
 
       <div class="section-heading reveal">
@@ -339,7 +410,7 @@
           01 / SOBRE
         </p>
 
-        <h2>
+        <h2 id="sobre-title">
 
           Uma trajetória em
           <br>
@@ -430,7 +501,8 @@
 
               Engenharia de Software
               <br>
-              em andamento - conclusão prevista para julho de 2028
+              em andamento — conclusão prevista
+              para julho de 2028
 
             </span>
 
@@ -460,6 +532,7 @@
     </section>
 
 
+
     <!-- ===================================================
          PROJETOS
     ==================================================== -->
@@ -467,6 +540,7 @@
     <section
       id="projetos"
       class="section projects-section"
+      aria-labelledby="projetos-title"
     >
 
       <div class="section-heading reveal">
@@ -475,7 +549,8 @@
           02 / PROJETOS
         </p>
 
-        <h2>
+        <h2 id="projetos-title">
+
           Onde a ideia vira
           <br>
 
@@ -484,6 +559,7 @@
           </span>
 
         </h2>
+
 
         <p class="section-lead">
 
@@ -501,14 +577,14 @@
 
 
         <!-- =================================================
-             QZVERSO
+             PROJETO 01 — QZVERSO
         ================================================== -->
 
         <article
           class="project-card project-featured reveal"
         >
 
-          <div class="project-top">
+          <header class="project-top">
 
             <span class="project-index">
               P.01
@@ -518,9 +594,13 @@
               EM EVOLUÇÃO
             </span>
 
-          </div>
+          </header>
 
-          <div class="project-visual qz">
+
+          <div
+            class="project-visual qz"
+            aria-hidden="true"
+          >
 
             <div class="qz-lines"></div>
 
@@ -529,6 +609,7 @@
             </span>
 
           </div>
+
 
           <div class="project-body">
 
@@ -539,9 +620,11 @@
 
             </p>
 
+
             <h3>
               Qzverso
             </h3>
+
 
             <p>
 
@@ -555,15 +638,38 @@
             </p>
 
 
-            <div class="tags">
+            <div
+              class="tags"
+              aria-label="Tecnologias do projeto"
+            >
 
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JS</span>
-              <span>FastAPI</span>
-              <span>PostgreSQL</span>
-              <span>Redis</span>
-              <span>Python / IA</span>
+              <span>
+                HTML
+              </span>
+
+              <span>
+                CSS
+              </span>
+
+              <span>
+                JavaScript
+              </span>
+
+              <span>
+                FastAPI
+              </span>
+
+              <span>
+                PostgreSQL
+              </span>
+
+              <span>
+                Redis
+              </span>
+
+              <span>
+                Python / IA
+              </span>
 
             </div>
 
@@ -578,18 +684,17 @@
 
         </article>
 
-<p>
-  
-</p>
+
+
         <!-- =================================================
-             APRENDA FÁCIL
+             PROJETO 02 — APRENDA FÁCIL
         ================================================== -->
 
         <article
           class="project-card reveal"
         >
 
-          <div class="project-top">
+          <header class="project-top">
 
             <span class="project-index">
               P.02
@@ -599,12 +704,18 @@
               PUBLICADO
             </span>
 
-          </div>
+          </header>
 
 
-          <div class="project-visual learn">
+          <div
+            class="project-visual learn"
+            aria-hidden="true"
+          >
 
-            <div class="grid-icon">
+            <div
+              class="grid-icon"
+              aria-hidden="true"
+            >
               ✦
             </div>
 
@@ -644,12 +755,26 @@
             </p>
 
 
-            <div class="tags">
+            <div
+              class="tags"
+              aria-label="Tecnologias do projeto"
+            >
 
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Miro</span>
+              <span>
+                HTML
+              </span>
+
+              <span>
+                CSS
+              </span>
+
+              <span>
+                JavaScript
+              </span>
+
+              <span>
+                Miro
+              </span>
 
             </div>
 
@@ -670,17 +795,16 @@
         </article>
 
 
+
         <!-- =================================================
-             PORTFÓLIO
+             PROJETO 03 — PORTFÓLIO
         ================================================== -->
-<p>
-  
-</p>
+
         <article
           class="project-card reveal"
         >
 
-          <div class="project-top">
+          <header class="project-top">
 
             <span class="project-index">
               P.03
@@ -690,10 +814,13 @@
               EM EVOLUÇÃO
             </span>
 
-          </div>
+          </header>
 
 
-          <div class="project-visual portfolio-project">
+          <div
+            class="project-visual portfolio-project"
+            aria-hidden="true"
+          >
 
             <div class="terminal-window">
 
@@ -743,13 +870,30 @@
             </p>
 
 
-            <div class="tags">
+            <div
+              class="tags"
+              aria-label="Tecnologias e estudos do projeto"
+            >
 
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Python — futuro</span>
-              <span>IA — futuro</span>
+              <span>
+                HTML
+              </span>
+
+              <span>
+                CSS
+              </span>
+
+              <span>
+                JavaScript
+              </span>
+
+              <span>
+                Python — futuro
+              </span>
+
+              <span>
+                IA — futuro
+              </span>
 
             </div>
 
@@ -774,6 +918,7 @@
     </section>
 
 
+
     <!-- ===================================================
          STACK
     ==================================================== -->
@@ -781,6 +926,7 @@
     <section
       id="stack"
       class="section stack-section"
+      aria-labelledby="stack-title"
     >
 
       <div class="section-heading reveal">
@@ -789,7 +935,7 @@
           03 / STACK &amp; ESTUDOS
         </p>
 
-        <h2>
+        <h2 id="stack-title">
 
           O que estou
           <br>
@@ -806,9 +952,14 @@
       <div class="stack-layout">
 
 
-        <!-- VISUAL -->
+        <!-- -------------------------------------------------
+             VISUAL
+        -------------------------------------------------- -->
 
-        <div class="stack-orbit reveal">
+        <div
+          class="stack-orbit reveal"
+          aria-hidden="true"
+        >
 
           <div class="stack-ring ring-1"></div>
 
@@ -849,7 +1000,10 @@
         </div>
 
 
-        <!-- LISTA -->
+
+        <!-- -------------------------------------------------
+             LISTA
+        -------------------------------------------------- -->
 
         <div class="stack-list reveal">
 
@@ -986,6 +1140,7 @@
     </section>
 
 
+
     <!-- ===================================================
          TRAJETÓRIA
     ==================================================== -->
@@ -993,6 +1148,7 @@
     <section
       id="trajetoria"
       class="section timeline-section"
+      aria-labelledby="trajetoria-title"
     >
 
       <div class="section-heading reveal">
@@ -1001,7 +1157,7 @@
           04 / TRAJETÓRIA
         </p>
 
-        <h2>
+        <h2 id="trajetoria-title">
 
           Experiência que
           <br>
@@ -1018,13 +1174,16 @@
       <div class="timeline">
 
 
-        <!-- EXPERIÊNCIA 01 -->
+        <!-- -------------------------------------------------
+             EXPERIÊNCIA 01
+        -------------------------------------------------- -->
 
-        <article
-          class="timeline-item reveal"
-        >
+        <article class="timeline-item reveal">
 
-          <div class="timeline-marker">
+          <div
+            class="timeline-marker"
+            aria-hidden="true"
+          >
             01
           </div>
 
@@ -1035,14 +1194,17 @@
               ABR/2026 — ABR/2027
             </p>
 
+
             <h3>
               Estágio em Engenharia de Software
             </h3>
+
 
             <h4>
               Secretaria Municipal de Cultura
               e Economia Criativa — DPP
             </h4>
+
 
             <p>
 
@@ -1057,10 +1219,21 @@
 
             <div class="tags">
 
-              <span>QGIS</span>
-              <span>PostgreSQL</span>
-              <span>GeoServer</span>
-              <span>Google Drive</span>
+              <span>
+                QGIS
+              </span>
+
+              <span>
+                PostgreSQL
+              </span>
+
+              <span>
+                GeoServer
+              </span>
+
+              <span>
+                Google Drive
+              </span>
 
             </div>
 
@@ -1069,13 +1242,17 @@
         </article>
 
 
-        <!-- EXPERIÊNCIA 02 -->
 
-        <article
-          class="timeline-item reveal"
-        >
+        <!-- -------------------------------------------------
+             EXPERIÊNCIA 02
+        -------------------------------------------------- -->
 
-          <div class="timeline-marker">
+        <article class="timeline-item reveal">
+
+          <div
+            class="timeline-marker"
+            aria-hidden="true"
+          >
             02
           </div>
 
@@ -1086,13 +1263,16 @@
               FEV/2025 — JUN/2025
             </p>
 
+
             <h3>
               Assistente de Operações
             </h3>
 
+
             <h4>
               KPMG · Temporário
             </h4>
+
 
             <p>
 
@@ -1107,13 +1287,17 @@
         </article>
 
 
-        <!-- EXPERIÊNCIA 03 -->
 
-        <article
-          class="timeline-item reveal"
-        >
+        <!-- -------------------------------------------------
+             EXPERIÊNCIA 03
+        -------------------------------------------------- -->
 
-          <div class="timeline-marker">
+        <article class="timeline-item reveal">
+
+          <div
+            class="timeline-marker"
+            aria-hidden="true"
+          >
             03
           </div>
 
@@ -1124,13 +1308,16 @@
               NOV/2022 — MAI/2024
             </p>
 
+
             <h3>
               Analista de Atendimento ao Cliente Pleno
             </h3>
 
+
             <h4>
               Clínica Nas Nuvens — Bionexo · Home Office
             </h4>
+
 
             <p>
 
@@ -1144,11 +1331,25 @@
 
             <div class="tags">
 
-              <span>Intercom</span>
-              <span>Redmine</span>
-              <span>Slack</span>
-              <span>Miro</span>
-              <span>AnyDesk</span>
+              <span>
+                Intercom
+              </span>
+
+              <span>
+                Redmine
+              </span>
+
+              <span>
+                Slack
+              </span>
+
+              <span>
+                Miro
+              </span>
+
+              <span>
+                AnyDesk
+              </span>
 
             </div>
 
@@ -1157,13 +1358,17 @@
         </article>
 
 
-        <!-- EXPERIÊNCIA 04 -->
 
-        <article
-          class="timeline-item reveal"
-        >
+        <!-- -------------------------------------------------
+             EXPERIÊNCIA 04
+        -------------------------------------------------- -->
 
-          <div class="timeline-marker">
+        <article class="timeline-item reveal">
+
+          <div
+            class="timeline-marker"
+            aria-hidden="true"
+          >
             04
           </div>
 
@@ -1174,13 +1379,16 @@
               MAR/2021 — MAR/2022
             </p>
 
+
             <h3>
               Assistente de Farmácia Hospitalar
             </h3>
 
+
             <h4>
               Hospital São Camilo Pompéia
             </h4>
+
 
             <p>
 
@@ -1201,12 +1409,14 @@
     </section>
 
 
+
     <!-- ===================================================
          FORMAÇÃO
     ==================================================== -->
 
     <section
       class="section education-section"
+      aria-labelledby="formacao-title"
     >
 
       <div class="education-card reveal">
@@ -1218,7 +1428,8 @@
             FORMAÇÃO
           </p>
 
-          <h2>
+
+          <h2 id="formacao-title">
 
             Fundação técnica
             <br>
@@ -1282,12 +1493,12 @@
 
           </div>
 
-
         </div>
 
       </div>
 
     </section>
+
 
 
     <!-- ===================================================
@@ -1297,6 +1508,7 @@
     <section
       id="contato"
       class="section contact-section"
+      aria-labelledby="contato-title"
     >
 
       <div class="contact-grid reveal">
@@ -1308,7 +1520,8 @@
             05 / CONTATO
           </p>
 
-          <h2>
+
+          <h2 id="contato-title">
 
             Vamos construir
             <br>
@@ -1384,7 +1597,6 @@
 
           </a>
 
-
         </div>
 
       </div>
@@ -1394,6 +1606,7 @@
   </main>
 
 
+
   <!-- =====================================================
        FOOTER
   ====================================================== -->
@@ -1401,7 +1614,7 @@
   <footer class="footer">
 
     <span>
-      AMANDA.A / SOFTWARE &amp; Engenharia de Prompt IA
+      AMANDA.A / SOFTWARE &amp; ENGENHARIA DE PROMPT IA
     </span>
 
     <span>
@@ -1413,6 +1626,7 @@
     </span>
 
   </footer>
+
 
 
   <!-- =====================================================
@@ -1427,6 +1641,7 @@
   >
     ↑
   </button>
+
 
 
   <!-- =====================================================
