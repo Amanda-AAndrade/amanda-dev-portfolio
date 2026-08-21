@@ -2,24 +2,19 @@
   "use strict";
 
   // =========================================================
-  // ESTADO INICIAL
+  // INICIALIZAÇÃO
   // =========================================================
 
   document.documentElement.classList.add("js-ready");
 
   const canvas = document.getElementById("starfield");
-  const ctx = canvas
-    ? canvas.getContext("2d")
-    : null;
+  const ctx = canvas ? canvas.getContext("2d") : null;
 
-  const backTop =
-    document.getElementById("backTop");
+  const backTop = document.getElementById("backTop");
+  const year = document.getElementById("year");
 
-  const year =
-    document.getElementById("year");
-
-  const planet =
-    document.querySelector(".planet");
+  const planet = document.querySelector(".planet");
+  const orbitPanel = document.querySelector(".orbit-panel");
 
 
   // =========================================================
@@ -27,9 +22,17 @@
   // =========================================================
 
   if (year) {
-    year.textContent =
-      new Date().getFullYear();
+    year.textContent = new Date().getFullYear();
   }
+
+
+  // =========================================================
+  // PREFERÊNCIA POR REDUÇÃO DE MOVIMENTO
+  // =========================================================
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
 
   // =========================================================
@@ -41,43 +44,23 @@
   let width = 0;
   let height = 0;
 
-  const dpr =
-    Math.min(
-      window.devicePixelRatio || 1,
-      2
-    );
+  const dpr = Math.min(
+    window.devicePixelRatio || 1,
+    2
+  );
 
 
   function resizeCanvas() {
+    if (!canvas || !ctx) return;
 
-    if (!canvas || !ctx) {
-      return;
-    }
+    width = window.innerWidth;
+    height = window.innerHeight;
 
-    width =
-      window.innerWidth;
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
 
-    height =
-      window.innerHeight;
-
-
-    canvas.width =
-      Math.floor(
-        width * dpr
-      );
-
-    canvas.height =
-      Math.floor(
-        height * dpr
-      );
-
-
-    canvas.style.width =
-      `${width}px`;
-
-    canvas.style.height =
-      `${height}px`;
-
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
 
     ctx.setTransform(
       dpr,
@@ -89,58 +72,41 @@
     );
 
 
-    const count =
-      Math.min(
-        180,
-        Math.floor(
-          (width * height) / 8000
-        )
-      );
+    const count = Math.min(
+      180,
+      Math.floor(
+        (width * height) / 8000
+      )
+    );
 
 
-    stars =
-      Array.from(
-        {
-          length: count
-        },
-        () => ({
-          x:
-            Math.random() *
-            width,
+    stars = Array.from(
+      { length: count },
+      () => ({
+        x: Math.random() * width,
 
-          y:
-            Math.random() *
-            height,
+        y: Math.random() * height,
 
-          radius:
-            Math.random() *
-            1.25 +
-            0.2,
+        radius:
+          Math.random() * 1.25 + 0.2,
 
-          alpha:
-            Math.random() *
-              0.65 +
-            0.12,
+        alpha:
+          Math.random() * 0.65 + 0.12,
 
-          drift:
-            (Math.random() - 0.5) *
-            0.12,
+        drift:
+          (Math.random() - 0.5) * 0.12,
 
-          twinkle:
-            Math.random() *
-            Math.PI *
-            2
-        })
-      );
+        twinkle:
+          Math.random() *
+          Math.PI *
+          2
+      })
+    );
   }
 
 
   function drawStars(time = 0) {
-
-    if (!canvas || !ctx) {
-      return;
-    }
-
+    if (!canvas || !ctx) return;
 
     ctx.clearRect(
       0,
@@ -150,88 +116,56 @@
     );
 
 
-    stars.forEach(
-      (star) => {
+    stars.forEach((star) => {
 
-        star.y +=
-          star.drift;
+      star.y += star.drift;
 
 
-        if (
-          star.y >
-          height + 4
-        ) {
-          star.y = -4;
-        }
-
-
-        if (
-          star.y <
-          -4
-        ) {
-          star.y =
-            height + 4;
-        }
-
-
-        const alpha =
-          Math.max(
-            0.04,
-            star.alpha +
-              Math.sin(
-                time *
-                  0.0015 +
-                star.twinkle
-              ) *
-                0.08
-          );
-
-
-        ctx.beginPath();
-
-
-        ctx.arc(
-          star.x,
-          star.y,
-          star.radius,
-          0,
-          Math.PI * 2
-        );
-
-
-        ctx.fillStyle =
-          `rgba(
-            210,
-            225,
-            255,
-            ${alpha}
-          )`;
-
-
-        ctx.fill();
+      if (star.y > height + 4) {
+        star.y = -4;
       }
-    );
 
 
-    requestAnimationFrame(
-      drawStars
-    );
+      if (star.y < -4) {
+        star.y = height + 4;
+      }
+
+
+      const alpha = Math.max(
+        0.04,
+
+        star.alpha +
+          Math.sin(
+            time * 0.0015 +
+            star.twinkle
+          ) *
+          0.08
+      );
+
+
+      ctx.beginPath();
+
+
+      ctx.arc(
+        star.x,
+        star.y,
+        star.radius,
+        0,
+        Math.PI * 2
+      );
+
+
+      ctx.fillStyle =
+        `rgba(210, 225, 255, ${alpha})`;
+
+      ctx.fill();
+
+    });
+
+
+    requestAnimationFrame(drawStars);
   }
 
-
-  // =========================================================
-  // REDUÇÃO DE MOVIMENTO
-  // =========================================================
-
-  const reducedMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-
-  // =========================================================
-  // INICIALIZA ESTRELAS
-  // =========================================================
 
   if (
     canvas &&
@@ -245,7 +179,6 @@
       drawStars
     );
 
-
     window.addEventListener(
       "resize",
       resizeCanvas,
@@ -253,11 +186,12 @@
         passive: true
       }
     );
+
   }
 
 
   // =========================================================
-  // ANIMAÇÃO DE ENTRADA
+  // REVEAL DAS SEÇÕES
   // =========================================================
 
   const revealElements =
@@ -267,8 +201,7 @@
 
 
   if (
-    "IntersectionObserver"
-    in window
+    "IntersectionObserver" in window
   ) {
 
     const revealObserver =
@@ -290,6 +223,7 @@
                 revealObserver.unobserve(
                   entry.target
                 );
+
               }
 
             }
@@ -304,11 +238,9 @@
 
     revealElements.forEach(
       (element) => {
-
         revealObserver.observe(
           element
         );
-
       }
     );
 
@@ -333,14 +265,10 @@
 
   function updateBackTop() {
 
-    if (!backTop) {
-      return;
-    }
+    if (!backTop) return;
 
 
-    if (
-      window.scrollY > 700
-    ) {
+    if (window.scrollY > 700) {
 
       backTop.classList.add(
         "visible"
@@ -353,6 +281,7 @@
       );
 
     }
+
   }
 
 
@@ -389,12 +318,11 @@
   // PLANETA INTERATIVO
   //
   // O planeta:
-  // - gira sozinho;
-  // - pode ser arrastado;
-  // - mantém o impulso após soltar;
-  // - funciona com mouse;
-  // - funciona com touch;
-  // - volta a girar sozinho depois.
+  // 1. gira sozinho;
+  // 2. pode ser arrastado pelo mouse;
+  // 3. pode ser arrastado pelo touch;
+  // 4. recebe impulso quando solto;
+  // 5. volta gradualmente para a rotação automática.
   // =========================================================
 
   if (
@@ -402,378 +330,92 @@
     !reducedMotion
   ) {
 
-    let rotation = 0;
+    let rotationX = 0;
+    let rotationY = 0;
 
-    let velocity = 0.08;
+    let velocityX = 0;
+    let velocityY = 0;
 
-    let dragging = false;
-
-    let pointerId = null;
+    let isDragging = false;
 
     let lastX = 0;
+    let lastY = 0;
 
     let lastTime = 0;
 
-    let idleTimer = null;
+
+    const autoRotation = 0.018;
+
+    const friction = 0.94;
+
+    const maxVelocity = 1.8;
 
 
-    /*
-      Velocidade padrão do planeta.
+    function normalizeVelocity(value) {
 
-      Positivo = sentido horário.
-    */
+      return Math.max(
+        -maxVelocity,
+        Math.min(
+          maxVelocity,
+          value
+        )
+      );
 
-    const AUTO_SPEED = 0.08;
-
-
-    /*
-      Quanto o movimento do mouse
-      influencia a rotação.
-    */
-
-    const DRAG_SENSITIVITY = 0.45;
+    }
 
 
-    /*
-      Atrito.
-
-      Quanto mais próximo de 1,
-      mais tempo o planeta continua
-      girando depois de solto.
-    */
-
-    const FRICTION = 0.96;
-
-
-    /*
-      Depois de ficar parado,
-      o planeta volta lentamente
-      ao movimento automático.
-    */
-
-    const AUTO_RESUME_DELAY = 1800;
-
-
-    // -------------------------------------------------------
-    // APLICA A ROTAÇÃO
-    // -------------------------------------------------------
-
-    function renderPlanet() {
+    function applyPlanetTransform() {
 
       planet.style.transform =
-        `rotate(${rotation}deg)`;
+        `
+        rotateX(${rotationX}deg)
+        rotateY(${rotationY}deg)
+        `;
 
     }
 
 
-    // -------------------------------------------------------
-    // INICIA ROTAÇÃO AUTOMÁTICA
-    // -------------------------------------------------------
-
-    function resumeAutoRotation() {
-
-      velocity =
-        AUTO_SPEED;
-
-    }
-
-
-    // -------------------------------------------------------
-    // TIMER PARA RETOMAR AUTO-ROTAÇÃO
-    // -------------------------------------------------------
-
-    function scheduleAutoRotation() {
-
-      clearTimeout(
-        idleTimer
-      );
-
-
-      idleTimer =
-        setTimeout(
-          () => {
-
-            resumeAutoRotation();
-
-          },
-          AUTO_RESUME_DELAY
-        );
-
-    }
-
-
-    // -------------------------------------------------------
-    // POINTER DOWN
-    // -------------------------------------------------------
-
-    planet.addEventListener(
-      "pointerdown",
-      (event) => {
-
-        dragging = true;
-
-        pointerId =
-          event.pointerId;
-
-        lastX =
-          event.clientX;
-
-        lastTime =
-          performance.now();
-
-
-        velocity = 0;
-
-
-        planet.classList.add(
-          "is-dragging"
-        );
-
-
-        planet.setPointerCapture(
-          pointerId
-        );
-
-
-        clearTimeout(
-          idleTimer
-        );
-
-
-        event.preventDefault();
-
-      }
-    );
-
-
-    // -------------------------------------------------------
-    // POINTER MOVE
-    // -------------------------------------------------------
-
-    planet.addEventListener(
-      "pointermove",
-      (event) => {
-
-        if (
-          !dragging ||
-          event.pointerId !==
-            pointerId
-        ) {
-          return;
-        }
-
-
-        const now =
-          performance.now();
-
-
-        const deltaX =
-          event.clientX -
-          lastX;
-
-
-        const deltaTime =
-          Math.max(
-            now - lastTime,
-            1
-          );
-
-
-        /*
-          Movimento horizontal
-          controla a rotação.
-        */
-
-        rotation +=
-          deltaX *
-          DRAG_SENSITIVITY;
-
-
-        /*
-          Calcula a velocidade
-          para gerar o impulso.
-        */
-
-        velocity =
-          (
-            deltaX /
-            deltaTime
-          ) *
-          16 *
-          DRAG_SENSITIVITY;
-
-
-        /*
-          Limita velocidades exageradas.
-        */
-
-        velocity =
-          Math.max(
-            -2.5,
-            Math.min(
-              2.5,
-              velocity
-            )
-          );
-
-
-        lastX =
-          event.clientX;
-
-        lastTime =
-          now;
-
-
-        renderPlanet();
-
-      }
-    );
-
-
-    // -------------------------------------------------------
-    // POINTER UP
-    // -------------------------------------------------------
-
-    function releasePlanet(event) {
-
-      if (
-        !dragging ||
-        event.pointerId !==
-          pointerId
-      ) {
-        return;
-      }
-
-
-      dragging = false;
-
-      pointerId = null;
-
-
-      planet.classList.remove(
-        "is-dragging"
-      );
-
-
-      /*
-        Depois do impulso,
-        começa a desacelerar.
-      */
-
-      scheduleAutoRotation();
-
-    }
-
-
-    planet.addEventListener(
-      "pointerup",
-      releasePlanet
-    );
-
-
-    planet.addEventListener(
-      "pointercancel",
-      releasePlanet
-    );
-
-
-    planet.addEventListener(
-      "lostpointercapture",
-      () => {
-
-        if (dragging) {
-
-          dragging = false;
-
-          planet.classList.remove(
-            "is-dragging"
-          );
-
-          scheduleAutoRotation();
-
-        }
-
-      }
-    );
-
-
-    // -------------------------------------------------------
-    // LOOP DO PLANETA
-    // -------------------------------------------------------
-
-    let lastFrame =
-      performance.now();
-
-
-    function animatePlanet(
-      currentTime
-    ) {
+    function animatePlanet(time) {
 
       const delta =
-        Math.min(
-          currentTime -
-            lastFrame,
-          32
-        );
+        lastTime
+          ? Math.min(
+              time - lastTime,
+              32
+            )
+          : 16;
 
 
-      lastFrame =
-        currentTime;
+      lastTime = time;
 
 
-      /*
-        Só aplica a física quando
-        o usuário não está arrastando.
-      */
+      if (!isDragging) {
 
-      if (!dragging) {
-
-        rotation +=
-          velocity *
-          (delta / 16);
+        // Rotação automática
+        rotationY +=
+          autoRotation *
+          delta;
 
 
-        /*
-          Aplica atrito.
-
-          Isso cria aquele efeito de
-          "soltar o planeta e ele continuar".
-        */
-
-        if (
-          Math.abs(velocity) >
-          AUTO_SPEED
-        ) {
-
-          velocity *=
-            Math.pow(
-              FRICTION,
-              delta / 16
-            );
-
-        } else {
-
-          /*
-            Quando desacelerar,
-            volta para a velocidade
-            automática.
-          */
-
-          const difference =
-            AUTO_SPEED -
-            velocity;
+        // Mantém o impulso do arraste
+        rotationY +=
+          velocityY *
+          delta;
 
 
-          velocity +=
-            difference *
-            0.025;
-
-        }
+        rotationX +=
+          velocityX *
+          delta;
 
 
-        renderPlanet();
+        // Redução gradual do impulso
+        velocityX *= friction;
+        velocityY *= friction;
 
       }
+
+
+      applyPlanetTransform();
 
 
       requestAnimationFrame(
@@ -783,13 +425,169 @@
     }
 
 
-    /*
-      Remove a animação CSS automática,
-      porque agora o JS controla tudo.
-    */
+    function pointerDown(event) {
 
-    planet.style.animation =
-      "none";
+      isDragging = true;
+
+      planet.classList.add(
+        "is-dragging"
+      );
+
+
+      lastX =
+        event.clientX;
+
+      lastY =
+        event.clientY;
+
+
+      velocityX = 0;
+      velocityY = 0;
+
+
+      if (
+        planet.setPointerCapture
+      ) {
+
+        planet.setPointerCapture(
+          event.pointerId
+        );
+
+      }
+
+    }
+
+
+    function pointerMove(event) {
+
+      if (!isDragging) return;
+
+
+      const currentX =
+        event.clientX;
+
+      const currentY =
+        event.clientY;
+
+
+      const deltaX =
+        currentX - lastX;
+
+      const deltaY =
+        currentY - lastY;
+
+
+      // Sensibilidade do giro
+      rotationY +=
+        deltaX * 0.45;
+
+      rotationX -=
+        deltaY * 0.30;
+
+
+      // Limita a inclinação vertical
+      rotationX =
+        Math.max(
+          -35,
+          Math.min(
+            35,
+            rotationX
+          )
+        );
+
+
+      // Guarda velocidade para o impulso
+      velocityY =
+        normalizeVelocity(
+          deltaX * 0.035
+        );
+
+      velocityX =
+        normalizeVelocity(
+          -deltaY * 0.025
+        );
+
+
+      lastX = currentX;
+      lastY = currentY;
+
+
+      applyPlanetTransform();
+
+    }
+
+
+    function pointerUp(event) {
+
+      if (!isDragging) return;
+
+
+      isDragging = false;
+
+      planet.classList.remove(
+        "is-dragging"
+      );
+
+
+      if (
+        planet.releasePointerCapture
+      ) {
+
+        try {
+
+          planet.releasePointerCapture(
+            event.pointerId
+          );
+
+        } catch (error) {
+          // Pointer já pode ter sido liberado.
+        }
+
+      }
+
+    }
+
+
+    planet.addEventListener(
+      "pointerdown",
+      pointerDown
+    );
+
+
+    planet.addEventListener(
+      "pointermove",
+      pointerMove
+    );
+
+
+    planet.addEventListener(
+      "pointerup",
+      pointerUp
+    );
+
+
+    planet.addEventListener(
+      "pointercancel",
+      pointerUp
+    );
+
+
+    planet.addEventListener(
+      "pointerleave",
+      (event) => {
+
+        if (
+          isDragging &&
+          event.pointerType === "mouse"
+        ) {
+
+          // Não interrompe o arraste:
+          // o pointer capture mantém o controle.
+
+        }
+
+      }
+    );
 
 
     requestAnimationFrame(
@@ -803,18 +601,6 @@
   // MOVIMENTO SUTIL DO PAINEL ESPACIAL
   // =========================================================
 
-  const orbitPanel =
-    document.querySelector(
-      ".orbit-panel"
-    );
-
-
-  /*
-    O painel não deve interferir
-    quando estamos interagindo com
-    o planeta.
-  */
-
   if (
     orbitPanel &&
     !reducedMotion
@@ -824,13 +610,12 @@
       "pointermove",
       (event) => {
 
+        // Não aplica tilt no painel
+        // enquanto o usuário está girando o planeta.
         if (
           planet &&
-          (
-            event.target === planet ||
-            planet.contains(
-              event.target
-            )
+          planet.classList.contains(
+            "is-dragging"
           )
         ) {
           return;
@@ -842,27 +627,25 @@
 
 
         const x =
-          (
-            event.clientX -
-            rect.left
-          ) /
+          (event.clientX -
+            rect.left) /
             rect.width -
           0.5;
 
 
         const y =
-          (
-            event.clientY -
-            rect.top
-          ) /
+          (event.clientY -
+            rect.top) /
             rect.height -
           0.5;
 
 
         orbitPanel.style.transform =
-          `perspective(900px)
-           rotateX(${y * -3}deg)
-           rotateY(${x * 3}deg)`;
+          `
+          perspective(900px)
+          rotateX(${y * -3}deg)
+          rotateY(${x * 3}deg)
+          `;
 
       }
     );
