@@ -1,6 +1,7 @@
 :root {
   --bg: #07080d;
   --bg-soft: #0b0d14;
+
   --panel: rgba(16, 18, 28, 0.78);
   --panel-strong: #11131d;
 
@@ -69,6 +70,11 @@ button {
   font: inherit;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 
 /* =========================================================
    BACKGROUND GRID
@@ -78,6 +84,7 @@ body::before {
   content: "";
 
   position: fixed;
+
   inset: 0;
 
   pointer-events: none;
@@ -97,11 +104,12 @@ body::before {
 
   background-size: 54px 54px;
 
-  mask-image: linear-gradient(
-    to bottom,
-    black,
-    transparent 75%
-  );
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 75%
+    );
 }
 
 
@@ -181,7 +189,8 @@ main,
 
   font-size: 0.9rem;
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(78, 157, 255, 0.35);
 
   padding: 4px 7px;
@@ -228,7 +237,9 @@ main,
 }
 
 .header-github {
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   padding: 10px 14px;
 
@@ -411,7 +422,9 @@ h2 span {
 }
 
 .btn-ghost {
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   color: #d9dce5;
 
@@ -434,7 +447,9 @@ h2 span {
 
   margin-top: 70px;
 
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 
   padding-top: 20px;
 }
@@ -499,7 +514,8 @@ h2 span {
 .orbit {
   position: absolute;
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(124, 184, 255, 0.16);
 
   border-radius: 50%;
@@ -548,17 +564,18 @@ h2 span {
     infinite;
 }
 
+
 /* =========================================================
    PLANETA INTERATIVO
 ========================================================= */
 
 .planet {
+  position: relative;
+
   width: 180px;
   height: 180px;
 
   border-radius: 50%;
-
-  position: relative;
 
   overflow: hidden;
 
@@ -581,7 +598,8 @@ h2 span {
       #05070c 76%
     );
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(124, 184, 255, 0.38);
 
   box-shadow:
@@ -595,23 +613,14 @@ h2 span {
     rgba(124, 184, 255, 0.08);
 
   /*
-    O planeta começa girando sozinho.
-    O JavaScript assume o controle quando
-    o usuário interage.
+    O JavaScript assume o controle
+    da rotação do planeta.
   */
-  animation:
-    planetAutoRotate
-    26s
-    linear
-    infinite;
+  animation: none;
 
   transition:
-    box-shadow 0.3s ease,
-    transform 0.15s ease;
+    box-shadow 0.3s ease;
 }
-
-
-/* Brilho atmosférico */
 
 .planet::before {
   content: "";
@@ -639,9 +648,6 @@ h2 span {
 
   z-index: 1;
 }
-
-
-/* Linhas da superfície */
 
 .planet::after {
   content: "";
@@ -671,9 +677,6 @@ h2 span {
   z-index: 2;
 }
 
-
-/* Área central */
-
 .planet-core {
   position: absolute;
 
@@ -687,13 +690,11 @@ h2 span {
   box-shadow:
     0 0 8px var(--cyan),
     0 0 20px var(--cyan),
-    0 0 35px rgba(93, 228, 255, 0.45);
+    0 0 35px
+    rgba(93, 228, 255, 0.45);
 
   z-index: 5;
 }
-
-
-/* Texto */
 
 .planet-label {
   position: relative;
@@ -718,13 +719,20 @@ h2 span {
     rgba(124, 184, 255, 0.35);
 }
 
+.planet:hover {
+  box-shadow:
+    0 0 90px
+    rgba(78, 157, 255, 0.22),
 
-/* Estado durante o arraste */
+    inset -30px -25px 45px
+    rgba(0, 0, 0, 0.72),
+
+    inset 12px 8px 30px
+    rgba(124, 184, 255, 0.12);
+}
 
 .planet.is-dragging {
   cursor: grabbing;
-
-  animation: none;
 
   box-shadow:
     0 0 100px
@@ -738,72 +746,9 @@ h2 span {
 }
 
 
-/* Pequeno destaque quando passa o mouse */
-
-.planet:hover {
-  box-shadow:
-    0 0 90px
-    rgba(78, 157, 255, 0.22),
-
-    inset -30px -25px 45px
-    rgba(0, 0, 0, 0.72),
-
-    inset 12px 8px 30px
-    rgba(124, 184, 255, 0.12);
-}
-
-
 /* =========================================================
-   ANIMAÇÃO AUTOMÁTICA
+   ORBIT NODES
 ========================================================= */
-
-@keyframes planetAutoRotate {
-
-  from {
-    transform:
-      rotate(0deg);
-  }
-
-  to {
-    transform:
-      rotate(360deg);
-  }
-
-
-
-.planet-core {
-  position: absolute;
-
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: var(--cyan);
-
-  box-shadow:
-    0 0 18px
-    var(--cyan);
-
-  z-index: 2;
-}
-
-.planet-label {
-  position: relative;
-
-  z-index: 3;
-
-  text-align: center;
-
-  font:
-    500 0.55rem/1.45
-    "DM Mono",
-    monospace;
-
-  letter-spacing: 0.12em;
-
-  color: #d9e8ff;
-}
 
 .orbit-node {
   position: absolute;
@@ -826,7 +771,8 @@ h2 span {
 
   background: #0a0d15;
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(124, 184, 255, 0.3);
 
   box-shadow:
@@ -980,7 +926,9 @@ h2 span {
       rgba(10, 12, 18, 0.72)
     );
 
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   box-shadow:
     0 20px 80px
@@ -1033,7 +981,9 @@ h2 span {
 }
 
 .accent-line {
-  border-left: 2px solid var(--pink);
+  border-left:
+    2px solid
+    var(--pink);
 
   padding-left: 16px;
 
@@ -1092,19 +1042,44 @@ h2 span {
 ========================================================= */
 
 .project-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns:
     1.15fr
     0.85fr;
 
-  gap: 18px;
+  gap: 24px;
+
+  align-items: stretch;
 }
 
 .project-card {
-  border-radius: var(--radius);
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
 
   overflow: hidden;
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 21, 32, 0.92),
+      rgba(10, 12, 18, 0.88)
+    );
+
+  border:
+    1px solid
+    var(--line);
+
+  box-shadow:
+    0 20px 80px
+    rgba(0, 0, 0, 0.18);
 
   transition:
     transform 0.3s ease,
@@ -1116,7 +1091,7 @@ h2 span {
   transform: translateY(-5px);
 
   border-color:
-    rgba(78, 157, 255, 0.24);
+    rgba(78, 157, 255, 0.28);
 
   box-shadow:
     0 25px 90px
@@ -1127,45 +1102,70 @@ h2 span {
   grid-row: span 2;
 }
 
-.project-top {
-  display: flex;
 
-  justify-content: space-between;
+/* =========================================================
+   PROJECT HEADER
+========================================================= */
+
+.project-top {
+  min-height: 58px;
+
+  padding:
+    18px
+    22px;
+
+  display: flex;
 
   align-items: center;
 
-  padding: 18px 20px;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.055);
 }
 
 .project-index,
 .project-status {
   font:
-    500 0.6rem
+    500 0.62rem
     "DM Mono",
     monospace;
 
   letter-spacing: 0.12em;
 
-  color: #697284;
+  text-transform: uppercase;
+}
+
+.project-index {
+  color: #697386;
 }
 
 .project-status {
   color: var(--cyan);
+
+  white-space: nowrap;
 }
 
 
 /* =========================================================
-   PROJECT VISUALS
+   PROJECT VISUAL
 ========================================================= */
 
 .project-visual {
-  min-height: 245px;
+  position: relative;
 
-  margin: 0 12px;
+  width: calc(100% - 24px);
+
+  min-height: 250px;
+
+  margin: 12px;
+
+  padding: 28px;
 
   border-radius: 16px;
-
-  position: relative;
 
   overflow: hidden;
 
@@ -1173,16 +1173,21 @@ h2 span {
 
   align-items: flex-end;
 
-  padding: 25px;
-
-  border: 1px solid
+  border:
+    1px solid
     rgba(255, 255, 255, 0.07);
+
+  isolation: isolate;
+}
+
+.project-featured .project-visual {
+  min-height: 310px;
 }
 
 .project-visual > span {
   position: relative;
 
-  z-index: 2;
+  z-index: 3;
 
   font:
     700 clamp(
@@ -1205,15 +1210,21 @@ h2 span {
   background:
     radial-gradient(
       circle at 70% 35%,
-      rgba(255, 79, 163, 0.38),
-      transparent 15%
+      rgba(255, 79, 163, 0.32),
+      transparent 18%
     ),
+
     radial-gradient(
-      circle at 40% 60%,
-      rgba(78, 157, 255, 0.35),
-      transparent 22%
+      circle at 35% 70%,
+      rgba(78, 157, 255, 0.28),
+      transparent 26%
     ),
-    #0a0d15;
+
+    linear-gradient(
+      135deg,
+      #0d1321,
+      #080a11
+    );
 }
 
 .qz::after {
@@ -1225,12 +1236,14 @@ h2 span {
   top: 20px;
   right: 20px;
 
+  z-index: 3;
+
+  color: #7d879a;
+
   font:
     500 0.55rem
     "DM Mono",
     monospace;
-
-  color: #788297;
 
   letter-spacing: 0.08em;
 }
@@ -1238,31 +1251,33 @@ h2 span {
 .qz-lines {
   position: absolute;
 
-  inset: 0;
+  inset: -20%;
+
+  z-index: 1;
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.045) 1px,
+      rgba(124, 184, 255, 0.055) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.045) 1px,
+      rgba(124, 184, 255, 0.055) 1px,
       transparent 1px
     );
 
   background-size: 28px 28px;
 
   transform:
-    perspective(300px)
-    rotateX(55deg)
-    translateY(25%);
+    perspective(400px)
+    rotateX(58deg)
+    translateY(20%);
 
   transform-origin: bottom;
 
   animation:
     gridMove
-    8s
+    9s
     linear
     infinite;
 }
@@ -1275,18 +1290,27 @@ h2 span {
 .learn {
   background:
     radial-gradient(
-      circle at 65% 35%,
-      rgba(255, 79, 163, 0.22),
-      transparent 22%
+      circle at 70% 35%,
+      rgba(255, 79, 163, 0.24),
+      transparent 24%
     ),
-    #0b0e16;
+
+    radial-gradient(
+      circle at 30% 70%,
+      rgba(78, 157, 255, 0.16),
+      transparent 28%
+    ),
+
+    #090c14;
 }
 
 .grid-icon {
   position: absolute;
 
-  right: 24px;
-  top: 20px;
+  right: 28px;
+  top: 22px;
+
+  z-index: 2;
 
   font-size: 5rem;
 
@@ -1306,38 +1330,55 @@ h2 span {
 ========================================================= */
 
 .portfolio-project {
-  min-height: 190px;
+  min-height: 210px;
 
-  background: #090b12;
+  display: flex;
 
   align-items: center;
 
   justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(78, 157, 255, 0.10),
+      transparent 50%
+    ),
+
+    #080b12;
 }
 
 .terminal-window {
-  width: 78%;
-
-  border: 1px solid
-    rgba(124, 184, 255, 0.22);
-
-  border-radius: 10px;
+  width: min(
+    80%,
+    420px
+  );
 
   padding: 20px;
 
-  background:
-    rgba(0, 0, 0, 0.24);
-
   display: grid;
 
-  gap: 8px;
+  gap: 9px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid
+    rgba(124, 184, 255, 0.20);
+
+  background:
+    rgba(3, 5, 9, 0.65);
+
+  box-shadow:
+    inset 0 0 30px
+    rgba(78, 157, 255, 0.025);
 
   font:
     500 0.63rem/1.5
     "DM Mono",
     monospace;
 
-  color: #8dc2ff;
+  color: #8dbfff;
 }
 
 .terminal-window span:nth-child(3) {
@@ -1350,63 +1391,121 @@ h2 span {
 ========================================================= */
 
 .project-body {
-  padding: 25px 28px 30px;
+  width: 100%;
+
+  min-width: 0;
+
+  padding:
+    28px
+    30px
+    32px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.project-type {
+  margin-bottom: 8px;
+
+  color: #697386;
+
+  font:
+    500 0.61rem
+    "DM Mono",
+    monospace;
+
+  letter-spacing: 0.11em;
+
+  line-height: 1.5;
 }
 
 .project-body h3 {
-  font-size: 1.6rem;
+  margin: 0;
 
-  letter-spacing: -0.04em;
+  font-size:
+    clamp(
+      1.45rem,
+      2.2vw,
+      1.85rem
+    );
 
-  margin: 5px 0 10px;
+  line-height: 1.1;
+
+  letter-spacing: -0.045em;
 }
 
 .project-body p:not(.project-type) {
-  color: #8f96a7;
+  max-width: 720px;
 
-  font-size: 0.88rem;
+  margin-top: 15px;
+
+  color: #949cad;
+
+  font-size: 0.87rem;
+
+  line-height: 1.8;
 }
 
-.tags {
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.project-body .tags {
+  margin-top: 22px;
+
   display: flex;
 
   flex-wrap: wrap;
 
   gap: 7px;
-
-  margin-top: 18px;
 }
 
-.tags span {
-  font:
-    500 0.59rem
-    "DM Mono",
-    monospace;
-
-  color: #9ca6b8;
-
-  border: 1px solid
-    rgba(255, 255, 255, 0.09);
+.project-body .tags span {
+  padding:
+    6px
+    9px;
 
   border-radius: 999px;
 
-  padding: 5px 8px;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
 
   background:
-    rgba(255, 255, 255, 0.015);
-}
+    rgba(255, 255, 255, 0.018);
 
-.project-link {
-  display: inline-block;
-
-  margin-top: 20px;
+  color: #9ca7ba;
 
   font:
-    500 0.66rem
+    500 0.58rem
     "DM Mono",
     monospace;
 
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PROJECT LINK
+========================================================= */
+
+.project-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  margin-top: 24px;
+
   color: var(--blue-soft);
+
+  font:
+    500 0.65rem
+    "DM Mono",
+    monospace;
 
   letter-spacing: 0.05em;
 
@@ -1418,13 +1517,14 @@ h2 span {
 .project-link:hover {
   color: #fff;
 
-  transform: translateX(3px);
+  transform:
+    translateX(4px);
 }
 
 .project-link.muted {
-  color: #687184;
+  color: #626c7e;
 
-  cursor: default;
+  pointer-events: none;
 }
 
 
@@ -1461,7 +1561,8 @@ h2 span {
 .stack-ring {
   position: absolute;
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(124, 184, 255, 0.14);
 
   border-radius: 50%;
@@ -1532,7 +1633,8 @@ h2 span {
       #090b12 70%
     );
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(124, 184, 255, 0.25);
 
   font:
@@ -1559,7 +1661,8 @@ h2 span {
     "DM Mono",
     monospace;
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(124, 184, 255, 0.2);
 
   background: #0a0d14;
@@ -1596,13 +1699,17 @@ h2 span {
 }
 
 .stack-list {
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 }
 
 .stack-row {
   padding: 23px 0;
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 
   display: flex;
 
@@ -1650,14 +1757,15 @@ h2 span {
 
 /* =========================================================
    TIMELINE
-   CORREÇÃO PRINCIPAL
 ========================================================= */
 
 .timeline {
   width: 100%;
+
   max-width: 100%;
 
-  border-left: 1px solid
+  border-left:
+    1px solid
     rgba(124, 184, 255, 0.18);
 
   margin-left: 12px;
@@ -1669,15 +1777,11 @@ h2 span {
   position: relative;
 
   width: 100%;
+
   max-width: 100%;
 
   display: grid;
 
-  /*
-    Marcador + área de conteúdo.
-    minmax(0, 1fr) impede a coluna
-    de ficar artificialmente estreita.
-  */
   grid-template-columns:
     56px
     minmax(0, 1fr);
@@ -1710,7 +1814,8 @@ h2 span {
 
   background: #090c13;
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(124, 184, 255, 0.25);
 
   font:
@@ -1729,6 +1834,7 @@ h2 span {
 
 .timeline-content {
   width: 100%;
+
   max-width: 850px;
 
   min-width: 0;
@@ -1792,13 +1898,13 @@ h2 span {
 .timeline-content p:not(.timeline-date) {
   width: 100%;
 
+  max-width: 760px;
+
   color: #858d9e;
 
   font-size: 0.88rem;
 
   line-height: 1.75;
-
-  max-width: 760px;
 
   margin-top: 14px;
 
@@ -1833,13 +1939,17 @@ h2 span {
 }
 
 .education-list {
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 }
 
 .education-list div {
   padding: 20px 0;
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 
   display: grid;
 
@@ -1866,9 +1976,13 @@ h2 span {
 }
 
 .contact-grid {
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 
   padding: 75px 0;
 
@@ -1898,7 +2012,9 @@ h2 span {
 .contact-links a {
   padding: 18px 0;
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 
   display: grid;
 
@@ -1979,7 +2095,9 @@ h2 span {
 
   border-radius: 50%;
 
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   background:
     rgba(10, 12, 18, 0.82);
@@ -2022,9 +2140,6 @@ h2 span {
 
 /* =========================================================
    REVEAL
-   IMPORTANTE:
-   Sem JS = conteúdo visível.
-   Com JS = animação de entrada.
 ========================================================= */
 
 .reveal {
@@ -2051,7 +2166,7 @@ h2 span {
 
 
 /* =========================================================
-   ANIMAÇÕES
+   ANIMATIONS
 ========================================================= */
 
 @keyframes scan {
@@ -2070,27 +2185,6 @@ h2 span {
 
   50% {
     transform: translateY(110px);
-  }
-}
-
-
-@keyframes planetPulse {
-
-  0%,
-  100% {
-    box-shadow:
-      0 0 70px
-      rgba(78, 157, 255, 0.13),
-      inset -25px -20px 40px
-      rgba(0, 0, 0, 0.65);
-  }
-
-  50% {
-    box-shadow:
-      0 0 105px
-      rgba(78, 157, 255, 0.22),
-      inset -25px -20px 40px
-      rgba(0, 0, 0, 0.65);
   }
 }
 
@@ -2236,10 +2330,16 @@ h2 span {
 
   .project-grid {
     grid-template-columns: 1fr;
+
+    gap: 20px;
   }
 
   .project-featured {
     grid-row: auto;
+  }
+
+  .project-featured .project-visual {
+    min-height: 250px;
   }
 
   .education-card {
@@ -2249,11 +2349,6 @@ h2 span {
   .contact-grid {
     gap: 45px;
   }
-
-  /*
-    Timeline continua ocupando toda a largura
-    disponível no tablet.
-  */
 
   .timeline-item {
     grid-template-columns:
@@ -2337,13 +2432,72 @@ h2 span {
     padding: 26px;
   }
 
-  .project-body {
+  /* ---------------- PROJECTS ---------------- */
+
+  .project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .project-card {
+    border-radius: 18px;
+  }
+
+  .project-top {
+    min-height: 52px;
+
+    padding:
+      16px
+      18px;
+  }
+
+  .project-visual,
+  .project-featured .project-visual {
+    min-height: 210px;
+
+    width: calc(100% - 20px);
+
+    margin: 10px;
+
     padding: 22px;
   }
 
-  .project-visual {
-    min-height: 205px;
+  .project-body {
+    padding:
+      24px
+      20px
+      28px;
   }
+
+  .project-body h3 {
+    font-size: 1.45rem;
+  }
+
+  .project-body p:not(.project-type) {
+    font-size: 0.84rem;
+
+    line-height: 1.75;
+  }
+
+  .project-status {
+    font-size: 0.52rem;
+  }
+
+  .project-body .tags {
+    gap: 6px;
+  }
+
+  .project-body .tags span {
+    font-size: 0.54rem;
+
+    padding:
+      5px
+      7px;
+  }
+
+
+  /* ---------------- STACK ---------------- */
 
   .stack-row {
     flex-direction: column;
@@ -2352,9 +2506,7 @@ h2 span {
   }
 
 
-  /* ================================================
-     TIMELINE MOBILE
-  ================================================ */
+  /* ---------------- TIMELINE ---------------- */
 
   .timeline {
     margin-left: 12px;
@@ -2367,7 +2519,11 @@ h2 span {
 
     gap: 10px;
 
-    padding-left: 25px;
+    padding:
+      0
+      0
+      48px
+      25px;
 
     min-width: 0;
   }
@@ -2399,11 +2555,16 @@ h2 span {
   }
 
 
+  /* ---------------- FOOTER ---------------- */
+
   .footer {
     flex-direction: column;
 
     gap: 9px;
   }
+
+
+  /* ---------------- ORBIT ---------------- */
 
   .orbit-node {
     transform: scale(0.85);
@@ -2451,4 +2612,7 @@ h2 span {
     transform: none;
   }
 
+  .planet {
+    cursor: default;
+  }
 }
