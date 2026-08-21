@@ -566,7 +566,7 @@ h2 span {
 
 
 /* =========================================================
-   PLANETA INTERATIVO
+   PLANETA
 ========================================================= */
 
 .planet {
@@ -843,7 +843,7 @@ h2 span {
 
 
 /* =========================================================
-   SCROLL HINT
+   SCROLL
 ========================================================= */
 
 .scroll-hint {
@@ -908,13 +908,14 @@ h2 span {
 
 
 /* =========================================================
-   GLASS CARDS
+   GLASS
 ========================================================= */
 
 .glass-card,
 .stat-card,
 .project-card,
-.education-card {
+.education-card,
+.timeline-item {
   background:
     linear-gradient(
       145deg,
@@ -1068,14 +1069,6 @@ h2 span {
       rgba(18, 21, 32, 0.92),
       rgba(10, 12, 18, 0.88)
     );
-
-  border:
-    1px solid
-    var(--line);
-
-  box-shadow:
-    0 20px 80px
-    rgba(0, 0, 0, 0.18);
 
   transition:
     transform 0.3s ease,
@@ -1404,15 +1397,6 @@ h2 span {
 .project-type {
   margin-bottom: 8px;
 
-  color: #697386;
-
-  font:
-    500 0.61rem
-    "DM Mono",
-    monospace;
-
-  letter-spacing: 0.11em;
-
   line-height: 1.5;
 }
 
@@ -1458,7 +1442,8 @@ h2 span {
   gap: 7px;
 }
 
-.project-body .tags span {
+.project-body .tags span,
+.timeline-content .tags span {
   padding:
     6px
     9px;
@@ -1752,17 +1737,8 @@ h2 span {
 
 
 /* =========================================================
-   TRAJETÓRIA / EXPERIÊNCIAS
+   TRAJETÓRIA
 ========================================================= */
-
-/*
-  A antiga timeline vertical deixava o conteúdo
-  extremamente estreito.
-
-  Agora as experiências seguem a mesma linguagem
-  visual dos projetos: cards, largura centralizada,
-  respiro e hierarquia.
-*/
 
 .timeline {
   width: 100%;
@@ -1778,14 +1754,12 @@ h2 span {
 
   gap: 24px;
 
-  border: none;
-
-  padding: 0;
+  align-items: stretch;
 }
 
 
 /* =========================================================
-   CARD DE EXPERIÊNCIA
+   EXPERIENCE CARD
 ========================================================= */
 
 .timeline-item {
@@ -1795,28 +1769,9 @@ h2 span {
 
   min-width: 0;
 
-  display: block;
-
-  padding: 0;
-
   overflow: hidden;
 
   border-radius: var(--radius);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(18, 21, 32, 0.92),
-      rgba(10, 12, 18, 0.88)
-    );
-
-  border:
-    1px solid
-    var(--line);
-
-  box-shadow:
-    0 20px 80px
-    rgba(0, 0, 0, 0.18);
 
   transition:
     transform 0.3s ease,
@@ -1835,11 +1790,6 @@ h2 span {
     rgba(0, 0, 0, 0.28);
 }
 
-
-/* =========================================================
-   LINHA DECORATIVA SUPERIOR
-========================================================= */
-
 .timeline-item::before {
   content: "";
 
@@ -1855,17 +1805,60 @@ h2 span {
     linear-gradient(
       90deg,
       transparent,
-      rgba(78, 157, 255, 0.22),
-      rgba(255, 79, 163, 0.10),
+      rgba(78, 157, 255, 0.30),
+      rgba(255, 79, 163, 0.12),
       transparent
     );
-
-  opacity: 0.8;
 }
 
 
 /* =========================================================
-   MARCADOR
+   FIRST EXPERIENCE FEATURE
+========================================================= */
+
+.timeline-featured {
+  grid-column: 1 / -1;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(78, 157, 255, 0.075),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      145deg,
+      rgba(18, 21, 32, 0.94),
+      rgba(10, 12, 18, 0.90)
+    );
+}
+
+.timeline-featured
+.timeline-content {
+  padding:
+    34px
+    38px
+    38px;
+}
+
+.timeline-featured
+.timeline-content h3 {
+  font-size:
+    clamp(
+      1.6rem,
+      2.5vw,
+      2.15rem
+    );
+}
+
+.timeline-featured
+.timeline-content p:not(.timeline-date) {
+  max-width: 850px;
+}
+
+
+/* =========================================================
+   MARKER
 ========================================================= */
 
 .timeline-marker {
@@ -1873,7 +1866,6 @@ h2 span {
 
   top: 18px;
   right: 20px;
-  left: auto;
 
   width: 34px;
   height: 34px;
@@ -1907,38 +1899,29 @@ h2 span {
 
 
 /* =========================================================
-   CONTEÚDO
+   EXPERIENCE CONTENT
 ========================================================= */
 
 .timeline-content {
   width: 100%;
 
-  max-width: none;
-
   min-width: 0;
 
   padding:
-    28px
+    29px
     30px
-    30px;
+    32px;
 }
 
-
-/* =========================================================
-   DATA
-========================================================= */
-
 .timeline-date {
-  display: block;
+  display: inline-block;
 
-  width: fit-content;
-
-  max-width: calc(100% - 55px);
+  max-width: calc(100% - 52px);
 
   margin:
     0
-    55px
-    14px
+    50px
+    15px
     0;
 
   padding:
@@ -1966,14 +1949,7 @@ h2 span {
   letter-spacing: 0.09em;
 }
 
-
-/* =========================================================
-   CARGO
-========================================================= */
-
 .timeline-content h3 {
-  width: 100%;
-
   margin: 0;
 
   color: var(--text);
@@ -1985,23 +1961,14 @@ h2 span {
       1.75rem
     );
 
-  line-height: 1.15;
+  line-height: 1.2;
 
   letter-spacing: -0.045em;
 
   overflow-wrap: normal;
-
-  word-break: normal;
 }
 
-
-/* =========================================================
-   EMPRESA
-========================================================= */
-
 .timeline-content h4 {
-  width: 100%;
-
   margin-top: 10px;
 
   color: #8d95a6;
@@ -2011,21 +1978,10 @@ h2 span {
   line-height: 1.55;
 
   font-weight: 500;
-
-  overflow-wrap: normal;
-
-  word-break: normal;
 }
 
-
-/* =========================================================
-   DESCRIÇÃO
-========================================================= */
-
 .timeline-content p:not(.timeline-date) {
-  width: 100%;
-
-  max-width: none;
+  max-width: 760px;
 
   margin-top: 18px;
 
@@ -2033,23 +1989,10 @@ h2 span {
 
   font-size: 0.84rem;
 
-  line-height: 1.78;
-
-  overflow-wrap: normal;
-
-  word-break: normal;
+  line-height: 1.82;
 }
 
-
-/* =========================================================
-   TAGS DAS EXPERIÊNCIAS
-========================================================= */
-
 .timeline-content .tags {
-  width: 100%;
-
-  max-width: none;
-
   margin-top: 21px;
 
   display: flex;
@@ -2057,75 +2000,6 @@ h2 span {
   flex-wrap: wrap;
 
   gap: 7px;
-}
-
-.timeline-content .tags span {
-  padding:
-    6px
-    9px;
-
-  border-radius: 999px;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.08);
-
-  background:
-    rgba(255, 255, 255, 0.018);
-
-  color: #9ca7ba;
-
-  font:
-    500 0.57rem
-    "DM Mono",
-    monospace;
-
-  white-space: nowrap;
-}
-
-
-/* =========================================================
-   PRIMEIRA EXPERIÊNCIA — DESTAQUE
-========================================================= */
-
-.timeline-item:first-child {
-  grid-column: span 2;
-
-  background:
-    radial-gradient(
-      circle at 85% 15%,
-      rgba(78, 157, 255, 0.075),
-      transparent 30%
-    ),
-
-    linear-gradient(
-      145deg,
-      rgba(18, 21, 32, 0.94),
-      rgba(10, 12, 18, 0.90)
-    );
-}
-
-.timeline-item:first-child
-.timeline-content {
-  padding:
-    34px
-    36px
-    36px;
-}
-
-.timeline-item:first-child
-.timeline-content h3 {
-  font-size:
-    clamp(
-      1.6rem,
-      2.5vw,
-      2.15rem
-    );
-}
-
-.timeline-item:first-child
-.timeline-content p:not(.timeline-date) {
-  max-width: 850px;
 }
 
 
@@ -2230,11 +2104,15 @@ h2 span {
   gap: 3px;
 
   transition:
-    padding-left 0.25s ease;
+    padding-left 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .contact-links a:hover {
   padding-left: 10px;
+
+  border-color:
+    rgba(78, 157, 255, 0.25);
 }
 
 .contact-links span {
@@ -2290,7 +2168,7 @@ h2 span {
 
 
 /* =========================================================
-   BACK TO TOP
+   BACK TOP
 ========================================================= */
 
 .back-top {
@@ -2397,7 +2275,6 @@ h2 span {
   }
 }
 
-
 @keyframes orbitFloatA {
 
   0%,
@@ -2413,7 +2290,6 @@ h2 span {
       scale(1.025);
   }
 }
-
 
 @keyframes orbitFloatB {
 
@@ -2431,7 +2307,6 @@ h2 span {
   }
 }
 
-
 @keyframes orbitFloatC {
 
   0%,
@@ -2448,7 +2323,6 @@ h2 span {
   }
 }
 
-
 @keyframes gridMove {
 
   from {
@@ -2463,7 +2337,6 @@ h2 span {
       28px 0;
   }
 }
-
 
 @keyframes iconFloat {
 
@@ -2481,31 +2354,25 @@ h2 span {
   }
 }
 
-
 @keyframes stackRotate {
 
   from {
-    transform:
-      rotate(0deg);
+    transform: rotate(0deg);
   }
 
   to {
-    transform:
-      rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
 
 @keyframes stackRotateReverse {
 
   from {
-    transform:
-      rotate(30deg);
+    transform: rotate(30deg);
   }
 
   to {
-    transform:
-      rotate(-330deg);
+    transform: rotate(-330deg);
   }
 }
 
@@ -2526,6 +2393,10 @@ h2 span {
   .education-card,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 55px;
   }
 
   .orbit-panel {
@@ -2555,26 +2426,16 @@ h2 span {
   }
 
 
-  /* TIMELINE */
+  /* TRAJETÓRIA */
 
   .timeline {
     grid-template-columns: 1fr;
 
-    width: 100%;
-
     gap: 20px;
   }
 
-  .timeline-item:first-child {
+  .timeline-featured {
     grid-column: auto;
-  }
-
-  .timeline-item:first-child
-  .timeline-content {
-    padding:
-      30px
-      28px
-      32px;
   }
 
 
@@ -2721,18 +2582,6 @@ h2 span {
     font-size: 0.52rem;
   }
 
-  .project-body .tags {
-    gap: 6px;
-  }
-
-  .project-body .tags span {
-    font-size: 0.54rem;
-
-    padding:
-      5px
-      7px;
-  }
-
 
   /* STACK */
 
@@ -2743,25 +2592,15 @@ h2 span {
   }
 
 
-  /* =====================================================
-     TRAJETÓRIA MOBILE
-  ====================================================== */
+  /* TRAJETÓRIA */
 
   .timeline {
-    width: 100%;
-
-    margin: 0;
-
     grid-template-columns: 1fr;
 
     gap: 16px;
   }
 
   .timeline-item {
-    width: 100%;
-
-    padding: 0;
-
     border-radius: 18px;
   }
 
@@ -2775,10 +2614,8 @@ h2 span {
   }
 
   .timeline-content,
-  .timeline-item:first-child
+  .timeline-featured
   .timeline-content {
-    width: 100%;
-
     padding:
       24px
       20px
@@ -2794,24 +2631,18 @@ h2 span {
   }
 
   .timeline-content h3,
-  .timeline-item:first-child
+  .timeline-featured
   .timeline-content h3 {
-    width: 100%;
-
     font-size: 1.35rem;
 
     line-height: 1.2;
   }
 
   .timeline-content h4 {
-    width: 100%;
-
     font-size: 0.78rem;
   }
 
   .timeline-content p:not(.timeline-date) {
-    width: 100%;
-
     font-size: 0.82rem;
 
     line-height: 1.72;
@@ -2827,6 +2658,17 @@ h2 span {
     padding:
       5px
       7px;
+  }
+
+
+  /* CONTACT */
+
+  .contact-grid {
+    padding: 55px 0;
+  }
+
+  .contact-links a {
+    padding: 16px 0;
   }
 
 
