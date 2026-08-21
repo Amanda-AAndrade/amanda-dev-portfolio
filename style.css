@@ -612,10 +612,6 @@ h2 span {
     inset 12px 8px 25px
     rgba(124, 184, 255, 0.08);
 
-  /*
-    O JavaScript assume o controle
-    da rotação do planeta.
-  */
   animation: none;
 
   transition:
@@ -1756,167 +1752,380 @@ h2 span {
 
 
 /* =========================================================
-   TIMELINE
+   TRAJETÓRIA / EXPERIÊNCIAS
 ========================================================= */
+
+/*
+  A antiga timeline vertical deixava o conteúdo
+  extremamente estreito.
+
+  Agora as experiências seguem a mesma linguagem
+  visual dos projetos: cards, largura centralizada,
+  respiro e hierarquia.
+*/
 
 .timeline {
   width: 100%;
 
-  max-width: 100%;
+  max-width: 1080px;
 
-  border-left:
-    1px solid
-    rgba(124, 184, 255, 0.18);
+  margin: 0 auto;
 
-  margin-left: 12px;
+  display: grid;
 
-  padding-left: 0;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  border: none;
+
+  padding: 0;
 }
+
+
+/* =========================================================
+   CARD DE EXPERIÊNCIA
+========================================================= */
 
 .timeline-item {
   position: relative;
 
   width: 100%;
 
-  max-width: 100%;
-
-  display: grid;
-
-  grid-template-columns:
-    56px
-    minmax(0, 1fr);
-
-  gap: 28px;
-
-  padding:
-    0
-    0
-    58px
-    28px;
-
   min-width: 0;
+
+  display: block;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 21, 32, 0.92),
+      rgba(10, 12, 18, 0.88)
+    );
+
+  border:
+    1px solid
+    var(--line);
+
+  box-shadow:
+    0 20px 80px
+    rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(78, 157, 255, 0.28);
+
+  box-shadow:
+    0 25px 90px
+    rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   LINHA DECORATIVA SUPERIOR
+========================================================= */
+
+.timeline-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(78, 157, 255, 0.22),
+      rgba(255, 79, 163, 0.10),
+      transparent
+    );
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   MARCADOR
+========================================================= */
 
 .timeline-marker {
   position: absolute;
 
-  left: -18px;
-  top: 0;
+  top: 18px;
+  right: 20px;
+  left: auto;
 
-  width: 36px;
-  height: 36px;
-
-  border-radius: 50%;
+  width: 34px;
+  height: 34px;
 
   display: grid;
 
   place-items: center;
 
-  background: #090c13;
+  border-radius: 50%;
+
+  background:
+    rgba(8, 11, 18, 0.92);
 
   border:
     1px solid
-    rgba(124, 184, 255, 0.25);
+    rgba(78, 157, 255, 0.28);
+
+  color: var(--blue-soft);
 
   font:
     500 0.55rem
     "DM Mono",
     monospace;
 
-  color: var(--blue-soft);
-
   box-shadow:
-    0 0 20px
+    0 0 24px
     rgba(78, 157, 255, 0.08);
 
-  z-index: 2;
+  z-index: 3;
 }
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
 
 .timeline-content {
   width: 100%;
 
-  max-width: 850px;
+  max-width: none;
 
   min-width: 0;
+
+  padding:
+    28px
+    30px
+    30px;
 }
+
+
+/* =========================================================
+   DATA
+========================================================= */
 
 .timeline-date {
   display: block;
 
-  font:
-    500 0.6rem
-    "DM Mono",
-    monospace;
+  width: fit-content;
+
+  max-width: calc(100% - 55px);
+
+  margin:
+    0
+    55px
+    14px
+    0;
+
+  padding:
+    6px
+    9px;
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 79, 163, 0.055);
+
+  border:
+    1px solid
+    rgba(255, 79, 163, 0.14);
 
   color: var(--pink);
 
-  letter-spacing: 0.1em;
+  font:
+    500 0.58rem
+    "DM Mono",
+    monospace;
 
-  margin-bottom: 6px;
+  line-height: 1.45;
+
+  letter-spacing: 0.09em;
 }
+
+
+/* =========================================================
+   CARGO
+========================================================= */
 
 .timeline-content h3 {
   width: 100%;
 
-  font-size: clamp(
-    1.35rem,
-    2.5vw,
-    2rem
-  );
+  margin: 0;
+
+  color: var(--text);
+
+  font-size:
+    clamp(
+      1.35rem,
+      2.1vw,
+      1.75rem
+    );
 
   line-height: 1.15;
 
-  letter-spacing: -0.04em;
-
-  margin-top: 4px;
-
-  color: var(--text);
+  letter-spacing: -0.045em;
 
   overflow-wrap: normal;
 
   word-break: normal;
 }
+
+
+/* =========================================================
+   EMPRESA
+========================================================= */
 
 .timeline-content h4 {
   width: 100%;
 
-  color: #8b93a4;
+  margin-top: 10px;
 
-  font-size: 0.88rem;
+  color: #8d95a6;
 
-  line-height: 1.5;
+  font-size: 0.82rem;
+
+  line-height: 1.55;
 
   font-weight: 500;
-
-  margin-top: 7px;
 
   overflow-wrap: normal;
 
   word-break: normal;
 }
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
 
 .timeline-content p:not(.timeline-date) {
   width: 100%;
 
-  max-width: 760px;
+  max-width: none;
+
+  margin-top: 18px;
 
   color: #858d9e;
 
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 
-  line-height: 1.75;
-
-  margin-top: 14px;
+  line-height: 1.78;
 
   overflow-wrap: normal;
 
   word-break: normal;
 }
 
+
+/* =========================================================
+   TAGS DAS EXPERIÊNCIAS
+========================================================= */
+
 .timeline-content .tags {
   width: 100%;
 
-  max-width: 760px;
+  max-width: none;
+
+  margin-top: 21px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.timeline-content .tags span {
+  padding:
+    6px
+    9px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(255, 255, 255, 0.018);
+
+  color: #9ca7ba;
+
+  font:
+    500 0.57rem
+    "DM Mono",
+    monospace;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PRIMEIRA EXPERIÊNCIA — DESTAQUE
+========================================================= */
+
+.timeline-item:first-child {
+  grid-column: span 2;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(78, 157, 255, 0.075),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      145deg,
+      rgba(18, 21, 32, 0.94),
+      rgba(10, 12, 18, 0.90)
+    );
+}
+
+.timeline-item:first-child
+.timeline-content {
+  padding:
+    34px
+    36px
+    36px;
+}
+
+.timeline-item:first-child
+.timeline-content h3 {
+  font-size:
+    clamp(
+      1.6rem,
+      2.5vw,
+      2.15rem
+    );
+}
+
+.timeline-item:first-child
+.timeline-content p:not(.timeline-date) {
+  max-width: 850px;
 }
 
 
@@ -2328,6 +2537,9 @@ h2 span {
     );
   }
 
+
+  /* PROJECTS */
+
   .project-grid {
     grid-template-columns: 1fr;
 
@@ -2342,25 +2554,43 @@ h2 span {
     min-height: 250px;
   }
 
+
+  /* TIMELINE */
+
+  .timeline {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    gap: 20px;
+  }
+
+  .timeline-item:first-child {
+    grid-column: auto;
+  }
+
+  .timeline-item:first-child
+  .timeline-content {
+    padding:
+      30px
+      28px
+      32px;
+  }
+
+
+  /* EDUCATION */
+
   .education-card {
     gap: 40px;
   }
+
+
+  /* CONTACT */
 
   .contact-grid {
     gap: 45px;
   }
 
-  .timeline-item {
-    grid-template-columns:
-      48px
-      minmax(0, 1fr);
-
-    gap: 24px;
-  }
-
-  .timeline-content {
-    max-width: 100%;
-  }
 }
 
 
@@ -2390,6 +2620,9 @@ h2 span {
   .header-github {
     display: none;
   }
+
+
+  /* HERO */
 
   .hero {
     min-height: auto;
@@ -2427,12 +2660,16 @@ h2 span {
     justify-content: center;
   }
 
+
+  /* CARDS */
+
   .glass-card,
   .education-card {
     padding: 26px;
   }
 
-  /* ---------------- PROJECTS ---------------- */
+
+  /* PROJECTS */
 
   .project-grid {
     grid-template-columns: 1fr;
@@ -2497,7 +2734,7 @@ h2 span {
   }
 
 
-  /* ---------------- STACK ---------------- */
+  /* STACK */
 
   .stack-row {
     flex-direction: column;
@@ -2506,56 +2743,94 @@ h2 span {
   }
 
 
-  /* ---------------- TIMELINE ---------------- */
+  /* =====================================================
+     TRAJETÓRIA MOBILE
+  ====================================================== */
 
   .timeline {
-    margin-left: 12px;
+    width: 100%;
+
+    margin: 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
   }
 
   .timeline-item {
     width: 100%;
 
-    grid-template-columns: 1fr;
+    padding: 0;
 
-    gap: 10px;
-
-    padding:
-      0
-      0
-      48px
-      25px;
-
-    min-width: 0;
+    border-radius: 18px;
   }
 
+  .timeline-marker {
+    top: 16px;
+
+    right: 17px;
+
+    width: 31px;
+    height: 31px;
+  }
+
+  .timeline-content,
+  .timeline-item:first-child
   .timeline-content {
     width: 100%;
 
-    max-width: 100%;
+    padding:
+      24px
+      20px
+      27px;
   }
 
+  .timeline-date {
+    max-width: calc(100% - 45px);
+
+    margin-right: 45px;
+
+    font-size: 0.53rem;
+  }
+
+  .timeline-content h3,
+  .timeline-item:first-child
   .timeline-content h3 {
-    font-size: 1.45rem;
+    width: 100%;
+
+    font-size: 1.35rem;
 
     line-height: 1.2;
   }
 
   .timeline-content h4 {
-    font-size: 0.82rem;
+    width: 100%;
 
-    line-height: 1.5;
+    font-size: 0.78rem;
   }
 
   .timeline-content p:not(.timeline-date) {
-    max-width: 100%;
+    width: 100%;
 
-    font-size: 0.84rem;
+    font-size: 0.82rem;
 
-    line-height: 1.7;
+    line-height: 1.72;
+  }
+
+  .timeline-content .tags {
+    gap: 6px;
+  }
+
+  .timeline-content .tags span {
+    font-size: 0.53rem;
+
+    padding:
+      5px
+      7px;
   }
 
 
-  /* ---------------- FOOTER ---------------- */
+  /* FOOTER */
 
   .footer {
     flex-direction: column;
@@ -2564,7 +2839,7 @@ h2 span {
   }
 
 
-  /* ---------------- ORBIT ---------------- */
+  /* ORBIT */
 
   .orbit-node {
     transform: scale(0.85);
