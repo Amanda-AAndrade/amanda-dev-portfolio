@@ -1,12 +1,25 @@
 Portfólio — Amanda Andrade
 
-Portfólio estático em HTML, CSS e JavaScript, pensado para publicação no GitHub Pages.
+Portfólio pessoal desenvolvido para apresentar minha trajetória em Tecnologia, projetos, estudos e evolução profissional na área de Engenharia de Software.
+
+O projeto foi construído do zero com HTML, CSS e JavaScript, explorando uma interface inspirada em conceitos espaciais, com animações, campo de estrelas, elementos interativos e uma experiência visual voltada à tecnologia.
+
+Além da apresentação profissional, o portfólio reúne meus projetos, experiências, formação e tecnologias que estou estudando, com foco em desenvolvimento de software, arquitetura de sistemas, Engenharia de Prompt e Inteligência Artificial aplicada.
+
+🚀 Projeto em evolução contínua, assim como minha trajetória na área de Tecnologia.
+
+
 
 ## Estrutura
 
-```text
+text
 portfolio-amanda/
-├── index.html
-├── styles.css
-├── script.js
-└── README.md
+|
+├- index.html
+|
+├- styles.css
+|
+├- script.js
+|
+└- README.md
+
