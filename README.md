@@ -12,14 +12,14 @@ Além da apresentação profissional, o portfólio reúne meus projetos, experi�
 
 ## Estrutura
 
-text
-portfolio-amanda/
-|
-├- index.html
-|
-├- styles.css
-|
-├- script.js
-|
-└- README.md
-
+PortfolioAmanda/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── assets/
+│   ├── images/
+│   └── icons/
+│
+└── README.md
