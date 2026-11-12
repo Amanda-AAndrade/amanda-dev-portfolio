@@ -13,8 +13,60 @@
   const backTop = document.getElementById("backTop");
   const year = document.getElementById("year");
 
+  const menuToggle = document.querySelector(".menu-toggle");
+  const primaryNav = document.getElementById("primary-nav");
+  const siteHeader = document.querySelector(".site-header");
+
   const planet = document.querySelector(".planet");
   const orbitPanel = document.querySelector(".orbit-panel");
+
+
+  // =========================================================
+  // NAVEGAÇÃO RESPONSIVA
+  // =========================================================
+
+  if (menuToggle && primaryNav && siteHeader) {
+    function setMenuOpen(isOpen) {
+      primaryNav.classList.toggle("is-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Fechar menu" : "Abrir menu"
+      );
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen =
+        menuToggle.getAttribute("aria-expanded") === "true";
+
+      setMenuOpen(!isOpen);
+    });
+
+    primaryNav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        setMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("pointerdown", (event) => {
+      if (!siteHeader.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) {
+        setMenuOpen(false);
+      }
+    });
+  }
 
 
   // =========================================================
