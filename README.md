@@ -23,7 +23,7 @@ Meu nível atual em Python é básico; essas áreas representam minha direção 
 
 | Projeto | Descrição | Acesso |
 |---|---|---|
-| **Qzverso** | Portal de descoberta e divulgação literária, com histórias, escritoras e iniciativas parceiras. | [Repositório](https://github.com/Amanda-AAndrade/Qzverso) · [Portal](https://amanda-aandrade.github.io/Qzverso/) |
+| **Qzverso** | Portal literário com vitrine demonstrativa, busca por título, sinopse e autoria, filtros por escritora, modal de detalhes e divulgação de parceiros. API, banco de dados e administração seguem como etapas planejadas. | [Repositório](https://github.com/Amanda-AAndrade/Qzverso) · [Portal](https://amanda-aandrade.github.io/Qzverso/) |
 | **Aprenda Fácil — PEX I–V** | Repositório de projetos de extensão desenvolvidos durante a graduação em ADS, incluindo o portal Aprenda Fácil e atividades relacionadas à Instituição Aurora. | [Repositório](https://github.com/Amanda-AAndrade/aprenda-facil-pex) · [Aplicação](https://amanda-aandrade.github.io/aprenda-facil-pex/) |
 | **Margem** | Aplicação de escrita com armazenamento local e suporte à experiência offline por meio de recursos PWA. | [Repositório](https://github.com/Amanda-AAndrade/Margem) · [Aplicação](https://amanda-aandrade.github.io/Margem/) |
 | **Portfólio** | Este site, criado para documentar minha trajetória, projetos e evolução técnica. | [Repositório](https://github.com/Amanda-AAndrade/amanda-dev-portfolio) |
