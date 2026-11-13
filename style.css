@@ -1224,6 +1224,43 @@ h2 span {
 }
 
 
+
+.project-cover-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  border-radius: 22px;
+  padding: 8px;
+  background: rgba(8, 10, 16, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+.project-cover-logo-light {
+  width: 118px;
+  height: 118px;
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(255, 255, 255, 0.5);
+  object-fit: contain;
+  padding: 10px;
+  transform: translate(-50%, -50%) rotate(3deg);
+}
+
+.qz > span,
+.learn > span {
+  z-index: 3;
+  text-shadow: 0 3px 22px rgba(0, 0, 0, 0.7);
+}
+
+.qz > span {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
 /* =========================================================
    QZVERSO
 ========================================================= */
@@ -1849,6 +1886,247 @@ h2 span {
   white-space: nowrap;
 }
 
+
+
+/* =========================================================
+   TECHNOLOGY SHOWCASE & LEARNING PATH
+========================================================= */
+
+.technology-showcase,
+.learning-path {
+  margin-top: 68px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 95% 0%, rgba(78, 157, 255, 0.07), transparent 32%),
+    linear-gradient(145deg, rgba(18, 21, 32, 0.78), rgba(10, 12, 18, 0.74));
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(14px);
+}
+
+.technology-heading {
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
+.technology-heading h3 {
+  margin-top: 8px;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.technology-heading > p:last-child {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.technology-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.technology-card {
+  min-width: 0;
+  padding: 18px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.018);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.technology-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(78, 157, 255, 0.28);
+  background: rgba(78, 157, 255, 0.035);
+}
+
+.technology-icons {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.technology-icons img {
+  width: auto;
+  max-width: 100%;
+  height: 35px;
+  object-fit: contain;
+}
+
+.technology-card h4 {
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.technology-state {
+  display: inline-block;
+  margin-top: 9px;
+  color: var(--cyan);
+  font: 500 0.49rem "DM Mono", monospace;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+
+.technology-card p {
+  margin-top: 9px;
+  color: #7e8798;
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.ai-toolkit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.ai-toolkit h4 {
+  margin-top: 6px;
+  font-size: 0.96rem;
+}
+
+.ai-toolkit p:not(.card-kicker) {
+  margin-top: 5px;
+  max-width: 540px;
+  color: #7e8798;
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+
+.ai-tool-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ai-tool-badges img {
+  height: 27px;
+  width: auto;
+}
+
+.learning-path {
+  margin-top: 24px;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.learning-card {
+  position: relative;
+  min-width: 0;
+  padding: 20px 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  background: rgba(5, 8, 14, 0.35);
+}
+
+.learning-number {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--pink);
+  font: 500 0.66rem "DM Mono", monospace;
+}
+
+.learning-card h4 {
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.learning-card p {
+  margin-top: 8px;
+  color: #7e8798;
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.project-features {
+  padding-left: 18px;
+}
+
+@media (max-width: 1100px) {
+  .technology-grid,
+  .learning-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .technology-showcase,
+  .learning-path {
+    padding: 26px;
+  }
+
+  .ai-toolkit {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ai-tool-badges {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .technology-showcase,
+  .learning-path {
+    margin-top: 30px;
+    padding: 21px 17px;
+  }
+
+  .technology-grid,
+  .learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .technology-card,
+  .learning-card {
+    padding: 15px 12px;
+  }
+
+  .technology-card h4,
+  .learning-card h4 {
+    font-size: 0.76rem;
+  }
+
+  .technology-card p,
+  .learning-card p {
+    font-size: 0.68rem;
+  }
+
+  .technology-state {
+    font-size: 0.45rem;
+  }
+
+  .project-cover-logo {
+    width: 82px;
+    height: 82px;
+  }
+
+  .project-cover-logo-light {
+    width: 96px;
+    height: 96px;
+  }
+
+  .ai-tool-badges img {
+    height: 24px;
+  }
+}
 
 /* =========================================================
    TRAJETÓRIA
