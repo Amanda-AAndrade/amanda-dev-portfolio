@@ -3161,3 +3161,93 @@ h2 span {
     cursor: default;
   }
 }
+
+
+/* QZVERSO — IMAGEM DE FUNDO DO CARD */
+.project-visual.qz {
+  position: relative;
+  min-height: 340px;
+  background: #090b18;
+  isolation: isolate;
+}
+.qz-background-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: .96;
+  transition: transform .7s ease, opacity .4s ease;
+}
+.project-card:hover .qz-background-image {
+  transform: scale(1.045);
+  opacity: 1;
+}
+.qz-image-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(5,8,19,.12), rgba(5,8,19,.04) 55%, rgba(5,8,19,.28)),
+    linear-gradient(0deg, rgba(5,7,16,.9), transparent 52%);
+}
+.project-visual.qz .qz-lines {
+  opacity: .22;
+  mix-blend-mode: screen;
+}
+.project-visual.qz > span {
+  position: absolute;
+  left: 26px;
+  bottom: 25px;
+  z-index: 3;
+  color: #fff;
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  letter-spacing: .16em;
+  text-shadow: 0 4px 28px rgba(0,0,0,.85), 0 0 24px rgba(180,118,255,.55);
+}
+.project-visual.qz .qz-logo-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  left: auto;
+  width: 58px;
+  height: 58px;
+  padding: 5px;
+  border-radius: 15px;
+  transform: none;
+  object-fit: cover;
+  background: rgba(8,10,18,.72);
+  border: 1px solid rgba(226,205,255,.45);
+  box-shadow: 0 8px 28px rgba(0,0,0,.4), 0 0 22px rgba(164,105,255,.28);
+}
+.qz-visual-caption {
+  position: absolute;
+  right: 23px;
+  bottom: 31px;
+  z-index: 3;
+  color: rgba(236,226,255,.72);
+  font: 500 .55rem "DM Mono", monospace;
+  letter-spacing: .14em;
+}
+@media (max-width: 620px) {
+  .project-visual.qz,
+  .project-featured .project-visual.qz { min-height: 235px; }
+  .project-visual.qz > span {
+    left: 18px;
+    bottom: 20px;
+    font-size: 2rem;
+  }
+  .qz-visual-caption {
+    right: 15px;
+    bottom: 25px;
+    font-size: .43rem;
+  }
+  .project-visual.qz .qz-logo-badge {
+    width: 48px;
+    height: 48px;
+    top: 13px;
+    right: 13px;
+  }
+}
