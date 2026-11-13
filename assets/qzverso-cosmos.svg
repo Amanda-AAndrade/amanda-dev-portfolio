@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Qzverso — universo literário</title>
+<desc id="desc">Um livro aberto em um cenário cósmico, rodeado por páginas flutuantes, estrelas e constelações em tons violetas, azuis e magenta.</desc>
+<defs>
+ <linearGradient id="space" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080d1b"/><stop offset=".48" stop-color="#11112d"/><stop offset="1" stop-color="#090916"/></linearGradient>
+ <radialGradient id="nebula"><stop stop-color="#bd55ff" stop-opacity=".62"/><stop offset=".45" stop-color="#7136d2" stop-opacity=".28"/><stop offset="1" stop-color="#25104b" stop-opacity="0"/></radialGradient>
+ <radialGradient id="planet"><stop stop-color="#647dff"/><stop offset=".55" stop-color="#293c88"/><stop offset="1" stop-color="#0a0d20"/></radialGradient>
+ <linearGradient id="pageL" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7e8ff"/><stop offset=".55" stop-color="#c49cff"/><stop offset="1" stop-color="#5b48a8"/></linearGradient>
+ <linearGradient id="pageR" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0fb"/><stop offset=".45" stop-color="#db8cff"/><stop offset="1" stop-color="#6c3dbb"/></linearGradient>
+ <linearGradient id="cover" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#222b57"/><stop offset=".55" stop-color="#17132f"/><stop offset="1" stop-color="#080a17"/></linearGradient>
+ <linearGradient id="glow"><stop stop-color="#56d9ff" stop-opacity="0"/><stop offset=".5" stop-color="#ea83ff" stop-opacity=".9"/><stop offset="1" stop-color="#56d9ff" stop-opacity="0"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="32"/></filter>
+ <filter id="glowFx"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="stars" width="120" height="100" patternUnits="userSpaceOnUse">
+  <circle cx="12" cy="18" r="1.1" fill="#fff" opacity=".7"/><circle cx="76" cy="39" r=".8" fill="#b9caff" opacity=".65"/><circle cx="105" cy="82" r="1.2" fill="#f0baff" opacity=".7"/><circle cx="43" cy="74" r=".6" fill="#fff" opacity=".5"/>
+ </pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#space)"/><rect width="1200" height="675" fill="url(#stars)"/>
+<ellipse cx="760" cy="260" rx="420" ry="260" fill="url(#nebula)" filter="url(#blur)"/>
+<ellipse cx="1080" cy="610" rx="350" ry="150" fill="#9c36ed" opacity=".13" filter="url(#blur)"/>
+<circle cx="20" cy="360" r="265" fill="url(#planet)" opacity=".88"/>
+<path d="M-230 345Q-80 120 170 140M-220 390Q-60 215 210 205M-190 450Q-40 270 240 260" fill="none" stroke="#8e9cff" stroke-opacity=".38" stroke-width="2"/>
+<g fill="none" stroke="#ba83ff" stroke-opacity=".38"><path d="M660 75L760 125 852 66 950 132 1060 55M760 125L790 225 900 258 950 132M900 258L1022 310 1112 250" stroke-width="1.5"/><path d="M475 125C660 -10 1000 5 1170 190M420 470C640 290 970 305 1230 435" stroke="#6bdbff" stroke-width="2"/></g>
+<g fill="#eadfff" filter="url(#glowFx)"><circle cx="660" cy="75" r="3"/><circle cx="760" cy="125" r="3.5"/><circle cx="852" cy="66" r="3"/><circle cx="950" cy="132" r="3.5"/><circle cx="1060" cy="55" r="3"/><circle cx="790" cy="225" r="2.5"/><circle cx="900" cy="258" r="3"/><circle cx="1022" cy="310" r="2.5"/><circle cx="1112" cy="250" r="3"/></g>
+<g fill="#d8b9ff" fill-opacity=".72" stroke="#f0dcff" stroke-opacity=".45"><path d="M620 150l74 20-10 44-76-20z" transform="rotate(-13 660 180)"/><path d="M1000 210l60-18 13 43-62 20z" transform="rotate(12 1035 225)"/><path d="M770 290l68-8 7 37-68 9z" transform="rotate(-19 805 310)"/></g>
+<g fill="none" stroke="#8c63d4" stroke-opacity=".55"><path d="M635 164l42 11M631 176l38 10M1011 211l35-10M1015 224l37-11"/></g>
+<ellipse cx="850" cy="580" rx="390" ry="42" fill="#b13bff" opacity=".28" filter="url(#blur)"/>
+<path d="M380 600C560 540 850 560 1220 605V675H380Z" fill="#080a17" opacity=".7"/>
+<path d="M465 580C620 520 760 532 838 566C920 522 1050 526 1165 575L1140 640C1025 600 915 605 838 634C735 604 620 606 480 645Z" fill="url(#cover)" stroke="#9d6be8" stroke-opacity=".65" stroke-width="3"/>
+<path d="M485 566C602 486 738 500 838 562V624C725 581 620 582 485 625Z" fill="url(#pageL)" stroke="#e9d8ff" stroke-width="2"/>
+<path d="M838 562C938 500 1065 488 1145 555L1120 625C1015 580 925 581 838 624Z" fill="url(#pageR)" stroke="#ffe0ff" stroke-width="2"/>
+<path d="M838 553C770 435 702 396 638 350C700 445 727 496 838 562C918 455 1002 413 1084 365C1000 471 933 520 838 562Z" fill="url(#glow)" opacity=".8" filter="url(#glowFx)"/>
+<path d="M490 565Q658 482 838 562Q1024 475 1145 555" fill="none" stroke="#ffe4ff" stroke-opacity=".8" stroke-width="3" filter="url(#glowFx)"/>
+<path d="M505 573Q650 519 811 575M500 590Q655 540 810 593M510 608Q660 561 812 610M866 576Q1002 519 1125 568M866 594Q1007 545 1118 590M865 612Q1005 565 1112 610" fill="none" stroke="#754eaa" stroke-opacity=".42" stroke-width="2"/>
+<path d="M350 550C540 320 1000 310 1240 505M420 625C640 465 1020 460 1260 590" fill="none" stroke="#a86cff" stroke-opacity=".48" stroke-width="2"/>
+<circle cx="1050" cy="485" r="5" fill="#eeb5ff" filter="url(#glowFx)"/><circle cx="610" cy="470" r="3.5" fill="#68e6ff" filter="url(#glowFx)"/>
+</svg>
